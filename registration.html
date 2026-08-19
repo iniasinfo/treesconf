@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Registration | TREES Conferences</title>
+    <meta
+        name="description"
+        content="Register for the TREES International Conference."
+    >
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --green: #087f5b;
+            --green-dark: #056044;
+            --green-light: #e9f7f1;
+            --dark: #10231c;
+            --text: #596861;
+            --muted: #7b8983;
+            --border: #dfeae5;
+            --cream: #f7faf8;
+            --danger: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #f7faf8;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Manrope", sans-serif;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+        .navbar {
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            padding: 17px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: var(--dark) !important;
+            font-family: "Manrope", sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background: var(--green);
+            color: white;
+            border-radius: 11px;
+            font-size: 21px;
+        }
+
+        .brand-green {
+            color: var(--green);
+        }
+
+        .nav-link {
+            color: #384840 !important;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--green) !important;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 12px 22px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+        }
+
+        /* =====================================================
+           PAGE HERO
+        ===================================================== */
+        .page-hero {
+            padding-top: 145px;
+            padding-bottom: 70px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.10),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    125deg,
+                    #064d39,
+                    #087f5b
+                );
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,.08);
+            color: #d9f5e9;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            color: white;
+            font-size: clamp(42px, 5vw, 62px);
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero p {
+            max-width: 720px;
+            color: #d9f2e8;
+            font-size: 17px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =====================================================
+           CONFERENCE BAR
+        ===================================================== */
+        .conference-bar {
+            margin-top: -28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .conference-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 23px 28px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: white;
+            box-shadow:
+                0 15px 45px rgba(16,35,28,.08);
+        }
+
+        .conference-name {
+            color: var(--dark);
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .conference-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .conference-meta i {
+            color: var(--green);
+            margin-right: 4px;
+        }
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+        .registration-area {
+            padding: 65px 0 100px;
+        }
+
+        .section-card {
+            margin-bottom: 25px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 25px;
+        }
+
+        .section-number {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 9px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: -13px;
+            margin-bottom: 25px;
+        }
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+        .form-label {
+            color: var(--dark);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 48px;
+            border: 1px solid #d7e4de;
+            border-radius: 8px;
+            font-size: 13px;
+            box-shadow: none !important;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--green);
+            box-shadow:
+                0 0 0 3px rgba(8,127,91,.08) !important;
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        /* =====================================================
+           PRICE CARDS
+        ===================================================== */
+        .price-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .price-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .price-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .price-card {
+            height: 100%;
+            padding: 20px;
+            border: 1.5px solid var(--border);
+            border-radius: 11px;
+            background: white;
+            transition: .2s ease;
+        }
+
+        .price-card:hover {
+            border-color: #9acbbb;
+            transform: translateY(-2px);
+        }
+
+        .price-option input:checked + .price-card {
+            border-color: var(--green);
+            background: var(--green-light);
+            box-shadow:
+                0 0 0 2px rgba(8,127,91,.08);
+        }
+
+        .price-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .price-name {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .price {
+            color: var(--green);
+            font-size: 18px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .price-description {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .price-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 4px 8px;
+            border-radius: 50px;
+            background: white;
+            color: var(--green);
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+        }
+
+        /* =====================================================
+           ACCOMMODATION
+        ===================================================== */
+        .accommodation-options {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .accommodation-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .accommodation-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .accommodation-card {
+            height: 100%;
+            padding: 20px;
+            border: 1.5px solid var(--border);
+            border-radius: 11px;
+            background: white;
+            transition: .2s ease;
+        }
+
+        .accommodation-card:hover {
+            border-color: #9acbbb;
+        }
+
+        .accommodation-option input:checked + .accommodation-card {
+            border-color: var(--green);
+            background: var(--green-light);
+        }
+
+        .accommodation-icon {
+            width: 43px;
+            height: 43px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 13px;
+            border-radius: 9px;
+            background: #edf5f1;
+            color: var(--green);
+            font-size: 19px;
+        }
+
+        .accommodation-card h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .accommodation-card p {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .accommodation-price {
+            color: var(--green);
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .accommodation-note {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           ADDONS
+        ===================================================== */
+        .addon-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 16px;
+            margin-bottom: 9px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+        .addon-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .addon-left input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--green);
+        }
+
+        .addon-title {
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .addon-description {
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 2px;
+        }
+
+        .addon-price {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        /* =====================================================
+           SUMMARY
+        ===================================================== */
+        .summary-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-card {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: white;
+            box-shadow:
+                0 15px 40px rgba(16,35,28,.06);
+        }
+
+        .summary-header {
+            padding: 24px;
+            background: var(--dark);
+        }
+
+        .summary-header h3 {
+            color: white;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .summary-header p {
+            color: #9dafaa;
+            font-size: 11px;
+            margin: 5px 0 0;
+        }
+
+        .summary-body {
+            padding: 25px;
+        }
+
+        .summary-line {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2ef;
+        }
+
+        .summary-line:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            color: var(--text);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .summary-value {
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .summary-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0 5px;
+            margin-top: 10px;
+            border-top: 2px solid var(--dark);
+        }
+
+        .summary-total-label {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .summary-total-value {
+            color: var(--green);
+            font-family: "Manrope", sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .currency-note {
+            color: var(--muted);
+            font-size: 10px;
+            text-align: right;
+            margin-top: 3px;
+        }
+
+        .summary-button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            margin-top: 13px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .secure-note i {
+            color: var(--green);
+        }
+
+        /* =====================================================
+           ALERT
+        ===================================================== */
+        .info-alert {
+            padding: 15px 17px;
+            border: 1px solid #cce6da;
+            border-radius: 9px;
+            background: var(--green-light);
+            color: #366957;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           TERMS
+        ===================================================== */
+        .terms {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .terms a {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer {
+            padding: 65px 0 25px;
+            background: #0b1814;
+            color: #9dafaa;
+        }
+
+        .footer-brand {
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        footer p {
+            max-width: 500px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer h5 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #9dafaa;
+        }
+
+        footer a:hover {
+            color: #55d5aa;
+        }
+
+        .copyright {
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px solid #21352e;
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 991px) {
+            .summary-wrapper {
+                position: static;
+            }
+
+            .accommodation-options {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-hero {
+                padding-top: 125px;
+                padding-bottom: 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 42px;
+            }
+
+            .conference-bar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .registration-area {
+                padding-top: 45px;
+            }
+
+            .section-card {
+                padding: 22px;
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .accommodation-options {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a
+            class="navbar-brand"
+            href="index.html"
+        >
+            <span class="brand-icon">
+                <i class="bi bi-diagram-3"></i>
+            </span>
+            <span class="brand-green">
+                TREES
+            </span>
+            &nbsp;Conferences
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navigation"
+        >
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="conferences.html"
+                    >
+                        Conferences
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#focus"
+                    >
+                        Scientific Areas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#involved"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-label">
+            Conference Registration
+        </div>
+        <h1>
+            Reserve your place
+            at TREES.
+        </h1>
+        <p>
+            Select your participation category,
+            accommodation preferences and optional
+            services. Your estimated registration
+            total will update automatically.
+        </p>
+    </div>
+</section>
+
+<!-- =====================================================
+     CONFERENCE BAR
+====================================================== -->
+<div class="conference-bar">
+    <div class="container">
+        <div class="conference-bar-inner">
+            <div>
+                <div class="conference-name">
+                    International Conference on
+                    Medical & Health Sciences
+                </div>
+                <div class="conference-meta">
+                    <span>
+                        <i class="bi bi-calendar3"></i>
+                        18–20 September 2027
+                    </span>
+                    <span>
+                        <i class="bi bi-geo-alt"></i>
+                        Hyderabad, India
+                    </span>
+                    <span>
+                        <i class="bi bi-currency-dollar"></i>
+                        Prices in USD
+                    </span>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="badge rounded-pill text-bg-light"
+                >
+                    Early Bird Registration
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =====================================================
+     REGISTRATION AREA
+====================================================== -->
+<section class="registration-area">
+    <div class="container">
+        <div class="row g-4">
+            <!-- =================================================
+                 LEFT COLUMN
+            ================================================== -->
+            <div class="col-lg-8">
+                <form id="registrationForm">
+                    <!-- =========================================
+                         PERSONAL DETAILS
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                01
+                            </div>
+                            <h2>
+                                Participant details
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Please provide the details of
+                            the person who will attend the
+                            conference.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    First Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="first_name"
+                                    placeholder="Your first name"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Last Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="last_name"
+                                    placeholder="Your last name"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Email Address
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Phone / WhatsApp
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    name="phone"
+                                    placeholder="+91 ..."
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Country
+                                    <span class="required">*</span>
+                                </label>
+                                <select
+                                    class="form-select"
+                                    name="country"
+                                    required
+                                >
+                                    <option value="">
+                                        Select country
+                                    </option>
+                                    <option>
+                                        India
+                                    </option>
+                                    <option>
+                                        United States
+                                    </option>
+                                    <option>
+                                        United Kingdom
+                                    </option>
+                                    <option>
+                                        Australia
+                                    </option>
+                                    <option>
+                                        Canada
+                                    </option>
+                                    <option>
+                                        Germany
+                                    </option>
+                                    <option>
+                                        France
+                                    </option>
+                                    <option>
+                                        Japan
+                                    </option>
+                                    <option>
+                                        Singapore
+                                    </option>
+                                    <option>
+                                        Other
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Organization / Institution
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="organization"
+                                    placeholder="University / Hospital / Company"
+                                    required
+                                >
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Designation
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="designation"
+                                    placeholder="Professor, Researcher, Physician, Student, etc."
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         REGISTRATION CATEGORY
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                02
+                            </div>
+                            <h2>
+                                Choose registration category
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Select the category that best
+                            describes your participation.
+                        </p>
+                        <div class="price-grid">
+                            <!-- SPEAKER -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="speaker"
+                                    data-price="499"
+                                    data-label="Speaker"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Speaker
+                                        </div>
+                                        <div class="price">
+                                            $499
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        For confirmed invited
+                                        speakers and presenters.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- POSTER -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="poster"
+                                    data-price="299"
+                                    data-label="Poster Presenter"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Poster Presenter
+                                        </div>
+                                        <div class="price">
+                                            $299
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        For participants presenting
+                                        a poster.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- STUDENT -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="student"
+                                    data-price="199"
+                                    data-label="Student / Early Career"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Student / Early Career
+                                        </div>
+                                        <div class="price">
+                                            $199
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        For students and
+                                        early-career researchers.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- DELEGATE -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="delegate"
+                                    data-price="399"
+                                    data-label="Delegate"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Delegate
+                                        </div>
+                                        <div class="price">
+                                            $399
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        General conference
+                                        participation.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- CORPORATE -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="corporate"
+                                    data-price="699"
+                                    data-label="Corporate / Industry"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Corporate / Industry
+                                        </div>
+                                        <div class="price">
+                                            $699
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        For industry and
+                                        corporate professionals.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+
+                            <!-- ACCOMPANYING -->
+                            <label class="price-option">
+                                <input
+                                    type="radio"
+                                    name="registration"
+                                    value="accompanying"
+                                    data-price="149"
+                                    data-label="Accompanying Person"
+                                >
+                                <div class="price-card">
+                                    <div class="price-top">
+                                        <div class="price-name">
+                                            Accompanying Person
+                                        </div>
+                                        <div class="price">
+                                            $149
+                                        </div>
+                                    </div>
+                                    <div class="price-description">
+                                        For accompanying guests
+                                        who are not presenting.
+                                    </div>
+                                    <span class="price-badge">
+                                        Early Bird
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         ACCOMMODATION
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                03
+                            </div>
+                            <h2>
+                                Accommodation
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Accommodation is optional and is
+                            charged separately from conference
+                            registration.
+                        </p>
+                        <div class="accommodation-options">
+                            <!-- NO ACCOMMODATION -->
+                            <label class="accommodation-option">
+                                <input
+                                    type="radio"
+                                    name="accommodation"
+                                    value="none"
+                                    data-price="0"
+                                    data-label="No Accommodation"
+                                    checked
+                                >
+                                <div class="accommodation-card">
+                                    <div class="accommodation-icon">
+                                        <i class="bi bi-x-circle"></i>
+                                    </div>
+                                    <h3>
+                                        No Accommodation
+                                    </h3>
+                                    <p>
+                                        I will arrange my own
+                                        accommodation.
+                                    </p>
+                                    <div class="accommodation-price">
+                                        Free
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- SINGLE -->
+                            <label class="accommodation-option">
+                                <input
+                                    type="radio"
+                                    name="accommodation"
+                                    value="single"
+                                    data-price="360"
+                                    data-label="Single Room — 3 Nights"
+                                >
+                                <div class="accommodation-card">
+                                    <div class="accommodation-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                    <h3>
+                                        Single Room
+                                    </h3>
+                                    <p>
+                                        Private room for
+                                        one participant.
+                                    </p>
+                                    <div class="accommodation-price">
+                                        $360
+                                    </div>
+                                    <div class="accommodation-note">
+                                        3 nights · Breakfast included
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- DOUBLE -->
+                            <label class="accommodation-option">
+                                <input
+                                    type="radio"
+                                    name="accommodation"
+                                    value="double"
+                                    data-price="240"
+                                    data-label="Shared Room — 3 Nights"
+                                >
+                                <div class="accommodation-card">
+                                    <div class="accommodation-icon">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <h3>
+                                        Shared / Double
+                                    </h3>
+                                    <p>
+                                        Shared room for
+                                        two participants.
+                                    </p>
+                                    <div class="accommodation-price">
+                                        $240
+                                    </div>
+                                    <div class="accommodation-note">
+                                        Per participant · 3 nights
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="info-alert mt-4">
+                            <i class="bi bi-info-circle me-1"></i>
+                            Accommodation rates shown above are
+                            sample rates for this template.
+                            Replace them with the confirmed
+                            hotel rates for each TREES conference.
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         OPTIONAL SERVICES
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                04
+                            </div>
+                            <h2>
+                                Optional services
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Add optional services to your
+                            registration if required.
+                        </p>
+
+                        <!-- DINNER -->
+                        <label class="addon-row">
+                            <div class="addon-left">
+                                <input
+                                    type="checkbox"
+                                    class="addon"
+                                    data-price="45"
+                                    data-label="Conference Dinner"
+                                >
+                                <div>
+                                    <div class="addon-title">
+                                        Conference Dinner
+                                    </div>
+                                    <div class="addon-description">
+                                        Formal conference dinner
+                                        and networking evening.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addon-price">
+                                + $45
+                            </div>
+                        </label>
+
+                        <!-- CITY TOUR -->
+                        <label class="addon-row">
+                            <div class="addon-left">
+                                <input
+                                    type="checkbox"
+                                    class="addon"
+                                    data-price="60"
+                                    data-label="City / Cultural Tour"
+                                >
+                                <div>
+                                    <div class="addon-title">
+                                        City / Cultural Tour
+                                    </div>
+                                    <div class="addon-description">
+                                        Optional guided local
+                                        experience.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addon-price">
+                                + $60
+                            </div>
+                        </label>
+
+                        <!-- EXTRA PROCEEDINGS -->
+                        <label class="addon-row">
+                            <div class="addon-left">
+                                <input
+                                    type="checkbox"
+                                    class="addon"
+                                    data-price="25"
+                                    data-label="Printed Proceedings"
+                                >
+                                <div>
+                                    <div class="addon-title">
+                                        Printed Proceedings
+                                    </div>
+                                    <div class="addon-description">
+                                        Printed conference
+                                        proceedings / abstract book.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addon-price">
+                                + $25
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- =========================================
+                         BILLING
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                05
+                            </div>
+                            <h2>
+                                Billing information
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Enter billing information if it
+                            differs from the participant details.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Billing / Organization Name
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Name to appear on invoice"
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Tax / VAT / GST Number
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Optional"
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">
+                                    Purchase Order Number
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Optional"
+                                >
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Billing Address
+                                </label>
+                                <textarea
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Full billing address"
+                                ></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         TERMS
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                06
+                            </div>
+                            <h2>
+                                Confirmation
+                            </h2>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="terms"
+                                required
+                            >
+                            <label
+                                class="form-check-label terms"
+                                for="terms"
+                            >
+                                I confirm that the information
+                                provided is accurate and agree
+                                to the conference registration,
+                                cancellation and payment terms.
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="communication"
+                            >
+                            <label
+                                class="form-check-label terms"
+                                for="communication"
+                            >
+                                I would like to receive
+                                conference announcements and
+                                future TREES conference updates.
+                            </label>
+                        </div>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg w-100"
+                    >
+                        Continue to Payment
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- =================================================
+                 RIGHT COLUMN / SUMMARY
+            ================================================== -->
+            <div class="col-lg-4">
+                <div class="summary-wrapper">
+                    <div class="summary-card">
+                        <div class="summary-header">
+                            <h3>
+                                Registration Summary
+                            </h3>
+                            <p>
+                                Your selection updates automatically.
+                            </p>
+                        </div>
+                        <div class="summary-body">
+                            <!-- REGISTRATION -->
+                            <div class="summary-line">
+                                <div class="summary-label">
+                                    Registration
+                                </div>
+                                <div
+                                    class="summary-value"
+                                    id="summaryRegistration"
+                                >
+                                    Not selected
+                                </div>
+                            </div>
+                            <!-- ACCOMMODATION -->
+                            <div class="summary-line">
+                                <div class="summary-label">
+                                    Accommodation
+                                </div>
+                                <div
+                                    class="summary-value"
+                                    id="summaryAccommodation"
+                                >
+                                    None
+                                </div>
+                            </div>
+                            <!-- ADDONS -->
+                            <div class="summary-line">
+                                <div class="summary-label">
+                                    Optional services
+                                </div>
+                                <div
+                                    class="summary-value"
+                                    id="summaryAddons"
+                                >
+                                    $0
+                                </div>
+                            </div>
+                            <!-- SUBTOTAL -->
+                            <div class="summary-line">
+                                <div class="summary-label">
+                                    Subtotal
+                                </div>
+                                <div
+                                    class="summary-value"
+                                    id="summarySubtotal"
+                                >
+                                    $0
+                                </div>
+                            </div>
+                            <!-- TOTAL -->
+                            <div class="summary-total">
+                                <div class="summary-total-label">
+                                    Estimated Total
+                                </div>
+                                <div
+                                    class="summary-total-value"
+                                    id="summaryTotal"
+                                >
+                                    $0
+                                </div>
+                            </div>
+                            <div class="currency-note">
+                                All prices shown in USD.
+                            </div>
+                            <button
+                                type="submit"
+                                form="registrationForm"
+                                class="btn btn-primary summary-button"
+                            >
+                                Continue to Payment
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </button>
+                            <div class="secure-note">
+                                <i class="bi bi-shield-check"></i>
+                                Secure registration process
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTACT CARD -->
+                    <div
+                        class="section-card mt-3"
+                        style="padding:22px;"
+                    >
+                        <h4
+                            style="
+                                font-size:16px;
+                                margin-bottom:8px;
+                            "
+                        >
+                            Need help?
+                        </h4>
+                        <p
+                            style="
+                                font-size:12px;
+                                line-height:1.7;
+                                margin-bottom:12px;
+                            "
+                        >
+                            If you are unsure which
+                            registration category to choose,
+                            contact the TREES conference team.
+                        </p>
+                        <a
+                            href="mailto:info@treesconferences.com"
+                            class="btn btn-outline-primary btn-sm"
+                        >
+                            <i class="bi bi-envelope me-1"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="footer-brand">
+                    TREES.
+                </div>
+                <p class="mt-3">
+                    Technology, Research, Engineering,
+                    & Empirical Sciences.
+                </p>
+                <p>
+                    An international conference initiative
+                    connecting people, ideas and knowledge
+                    across technology, engineering, medicine,
+                    life sciences and beyond.
+                </p>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Explore
+                </h5>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conferences.html">
+                            Conferences
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Conference
+                </h5>
+                <ul>
+                    <li>
+                        <a href="conference-detail.html">
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conference-detail.html#tracks">
+                            Scientific Tracks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conference-detail.html#abstract">
+                            Abstracts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registration.html">
+                            Registration
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h5>
+                    Contact
+                </h5>
+                <ul>
+                    <li>
+                        <a
+                            href="mailto:info@treesconferences.com"
+                        >
+                            info@treesconferences.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 TREES Conferences.
+            All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<!-- =====================================================
+     REGISTRATION CALCULATOR
+====================================================== -->
+<script>
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+        const registrationInputs =
+            document.querySelectorAll(
+                'input[name="registration"]'
+            );
+        const accommodationInputs =
+            document.querySelectorAll(
+                'input[name="accommodation"]'
+            );
+        const addons =
+            document.querySelectorAll(
+                ".addon"
+            );
+        const summaryRegistration =
+            document.getElementById(
+                "summaryRegistration"
+            );
+        const summaryAccommodation =
+            document.getElementById(
+                "summaryAccommodation"
+            );
+        const summaryAddons =
+            document.getElementById(
+                "summaryAddons"
+            );
+        const summarySubtotal =
+            document.getElementById(
+                "summarySubtotal"
+            );
+        const summaryTotal =
+            document.getElementById(
+                "summaryTotal"
+            );
+        /*
+         * Format money
+         */
+        function money(value) {
+            return "$" +
+                value.toLocaleString(
+                    "en-US",
+                    {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    }
+                );
+        }
+        /*
+         * Calculate total
+         */
+        function calculateTotal() {
+            let registrationPrice = 0;
+            let registrationLabel =
+                "Not selected";
+            let accommodationPrice = 0;
+            let accommodationLabel =
+                "None";
+            let addonsPrice = 0;
+            /*
+             * Registration
+             */
+            registrationInputs.forEach(
+                function (input) {
+                    if (input.checked) {
+                        registrationPrice =
+                            Number(
+                                input.dataset.price
+                            );
+                        registrationLabel =
+                            input.dataset.label;
+                    }
+                }
+            );
+            /*
+             * Accommodation
+             */
+            accommodationInputs.forEach(
+                function (input) {
+                    if (input.checked) {
+                        accommodationPrice =
+                            Number(
+                                input.dataset.price
+                            );
+                        accommodationLabel =
+                            input.dataset.label;
+                    }
+                }
+            );
+            /*
+             * Add-ons
+             */
+            let selectedAddons = [];
+            addons.forEach(
+                function (addon) {
+                    if (addon.checked) {
+                        const price =
+                            Number(
+                                addon.dataset.price
+                            );
+                        addonsPrice += price;
+                        selectedAddons.push(
+                            addon.dataset.label
+                        );
+                    }
+                }
+            );
+            /*
+             * Total
+             */
+            const subtotal =
+                registrationPrice +
+                accommodationPrice +
+                addonsPrice;
+            /*
+             * Update registration
+             */
+            summaryRegistration.textContent =
+                registrationPrice > 0
+                    ? money(registrationPrice)
+                    : "Not selected";
+            /*
+             * Update accommodation
+             */
+            summaryAccommodation.textContent =
+                accommodationPrice > 0
+                    ? money(accommodationPrice)
+                    : "None";
+            /*
+             * Update addons
+             */
+            summaryAddons.textContent =
+                addonsPrice > 0
+                    ? money(addonsPrice)
+                    : "$0";
+            /*
+             * Update subtotal
+             */
+            summarySubtotal.textContent =
+                money(subtotal);
+            /*
+             * Update total
+             * Currently there is no tax.
+             * You can add tax logic here later.
+             */
+            summaryTotal.textContent =
+                money(subtotal);
+        }
+
+        /*
+         * Registration listeners
+         */
+        registrationInputs.forEach(
+            function (input) {
+                input.addEventListener(
+                    "change",
+                    calculateTotal
+                );
+            }
+        );
+        /*
+         * Accommodation listeners
+         */
+        accommodationInputs.forEach(
+            function (input) {
+                input.addEventListener(
+                    "change",
+                    calculateTotal
+                );
+            }
+        );
+        /*
+         * Add-on listeners
+         */
+        addons.forEach(
+            function (addon) {
+                addon.addEventListener(
+                    "change",
+                    calculateTotal
+                );
+            }
+        );
+        /*
+         * Initial calculation
+         */
+        calculateTotal();
+
+        /*
+         * Form submission
+         *
+         * This is currently a demo.
+         *
+         * Replace this with your backend/payment
+         * endpoint when your payment system is ready.
+         */
+        document
+            .getElementById("registrationForm")
+            .addEventListener(
+                "submit",
+                function (event) {
+                    event.preventDefault();
+                    const selectedRegistration =
+                        document.querySelector(
+                            'input[name="registration"]:checked'
+                        );
+                    if (!selectedRegistration) {
+                        alert(
+                            "Please select a registration category."
+                        );
+                        return;
+                    }
+                    /*
+                     * Recalculate total
+                     */
+                    let total = 0;
+                    total += Number(
+                        selectedRegistration.dataset.price
+                    );
+                    const selectedAccommodation =
+                        document.querySelector(
+                            'input[name="accommodation"]:checked'
+                        );
+                    if (selectedAccommodation) {
+                        total += Number(
+                            selectedAccommodation.dataset.price
+                        );
+                    }
+                    document
+                        .querySelectorAll(".addon:checked")
+                        .forEach(
+                            function (addon) {
+                                total += Number(
+                                    addon.dataset.price
+                                );
+                            }
+                        );
+                    /*
+                     * Demo confirmation
+                     */
+                    alert(
+                        "Registration amount: $" +
+                        total +
+                        "\n\n" +
+                        "Connect this form to your payment gateway/backend to complete the registration."
+                    );
+                }
+            );
+    }
+);
+</script>
+</body>
+</html>
