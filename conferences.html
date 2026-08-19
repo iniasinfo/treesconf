@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        Upcoming Conferences | TREES Conferences
+    </title>
+    <meta
+        name="description"
+        content="Explore upcoming international conferences organized by TREES — Technology, Research, Engineering & Empirical Sciences."
+    >
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --green: #087f5b;
+            --green-dark: #056044;
+            --green-light: #e9f7f1;
+            --dark: #10231c;
+            --text: #596861;
+            --muted: #7b8983;
+            --border: #dfeae5;
+            --cream: #f7faf8;
+            --blue: #2563eb;
+            --purple: #7c3aed;
+            --orange: #ea580c;
+            --red: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Manrope", sans-serif;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+        .navbar {
+            background: rgba(255,255,255,.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            padding: 17px 0;
+            transition: .3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: var(--dark) !important;
+            font-family: "Manrope", sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background: var(--green);
+            color: white;
+            border-radius: 11px;
+            font-size: 21px;
+        }
+
+        .brand-green {
+            color: var(--green);
+        }
+
+        .nav-link {
+            color: #384840 !important;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--green) !important;
+        }
+
+        .nav-link.active {
+            color: var(--green) !important;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 12px 22px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+        }
+
+        .btn-outline-primary {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-outline-primary:hover {
+            color: white;
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+            padding-top: 175px;
+            padding-bottom: 105px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(18,184,134,.13),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 85%,
+                    rgba(8,127,91,.08),
+                    transparent 28%
+                ),
+                #f7fbf9;
+        }
+
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            width: 580px;
+            height: 580px;
+            right: -270px;
+            top: 30px;
+            border: 1px solid rgba(8,127,91,.08);
+            border-radius: 50%;
+        }
+
+        .page-hero::after {
+            content: "";
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            right: -150px;
+            top: 140px;
+            border: 1px solid rgba(8,127,91,.07);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 14px;
+            border-radius: 50px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .hero-label span {
+            width: 7px;
+            height: 7px;
+            background: #20c997;
+            border-radius: 50%;
+        }
+
+        .page-hero h1 {
+            max-width: 850px;
+            font-size: clamp(44px, 6vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .page-hero h1 .highlight {
+            color: var(--green);
+        }
+
+        .hero-description {
+            max-width: 720px;
+            font-size: 18px;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+        .breadcrumb-area {
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+            background: white;
+        }
+
+        .breadcrumb {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .breadcrumb-item a {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .breadcrumb-item.active {
+            color: var(--muted);
+        }
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+        .section-label {
+            color: var(--green);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 4vw, 50px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+        }
+
+        .section-text {
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* =====================================================
+           FILTER BAR
+        ===================================================== */
+        .conference-section {
+            background: white;
+        }
+
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 20px;
+            margin-bottom: 45px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--cream);
+        }
+
+        .filter-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--border);
+            background: white;
+            color: #596861;
+            border-radius: 7px;
+            padding: 8px 13px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+        }
+
+        /* =====================================================
+           CONFERENCE CARD
+        ===================================================== */
+        .conference-card {
+            height: 100%;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 19px;
+            background: white;
+            transition: .3s ease;
+        }
+
+        .conference-card:hover {
+            transform: translateY(-6px);
+            box-shadow:
+                0 20px 50px rgba(16,35,28,.09);
+            border-color: #c6ded4;
+        }
+
+        .conference-top {
+            position: relative;
+            min-height: 210px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #075e44,
+                    #087f5b
+                );
+        }
+
+        .conference-card:nth-child(2) .conference-top {
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #1e4e8c,
+                    #2563eb
+                );
+        }
+
+        .conference-card:nth-child(3) .conference-top {
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #6b32b6,
+                    #7c3aed
+                );
+        }
+
+        .conference-card:nth-child(4) .conference-top {
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.15),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #b43d16,
+                    #ea580c
+                );
+        }
+
+        .conference-code {
+            color: rgba(255,255,255,.75);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .conference-top h3 {
+            color: white;
+            font-size: 25px;
+            line-height: 1.25;
+            margin: 15px 0 0;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            padding: 7px 10px;
+            border-radius: 6px;
+            background: rgba(255,255,255,.14);
+            border: 1px solid rgba(255,255,255,.2);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+        }
+
+        .conference-body {
+            padding: 28px;
+        }
+
+        .conference-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            padding-bottom: 22px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #53635c;
+        }
+
+        .meta-item i {
+            color: var(--green);
+            font-size: 16px;
+        }
+
+        .conference-body p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .topic-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 25px;
+        }
+
+        .topic-tag {
+            padding: 6px 9px;
+            border-radius: 6px;
+            background: #f4f8f6;
+            border: 1px solid var(--border);
+            color: #52625b;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .conference-actions {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .conference-actions .btn {
+            font-size: 12px;
+            padding: 10px 14px;
+        }
+
+        .save-btn {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            color: var(--green);
+        }
+
+        .save-btn:hover {
+            background: var(--green-light);
+        }
+
+        /* =====================================================
+           EMPTY / FUTURE CONFERENCES
+        ===================================================== */
+        .future-section {
+            background: var(--cream);
+        }
+
+        .future-box {
+            padding: 60px 50px;
+            border: 1px dashed #bcd3c9;
+            border-radius: 20px;
+            background: white;
+        }
+
+        .future-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            border-radius: 18px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 30px;
+        }
+
+        .future-box h3 {
+            font-size: 28px;
+        }
+
+        .future-box p {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* =====================================================
+           WHY ATTEND
+        ===================================================== */
+        .why-section {
+            background: white;
+        }
+
+        .why-card {
+            height: 100%;
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: white;
+            transition: .3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 15px 40px rgba(16,35,28,.06);
+        }
+
+        .why-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 22px;
+        }
+
+        .why-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =====================================================
+           HOW IT WORKS
+        ===================================================== */
+        .process-section {
+            background: var(--dark);
+            color: #b8c9c2;
+        }
+
+        .process-section h2 {
+            color: white;
+        }
+
+        .process-section .section-label {
+            color: #55d5aa;
+        }
+
+        .process-step {
+            position: relative;
+            height: 100%;
+            padding: 30px;
+            border: 1px solid #294039;
+            border-radius: 16px;
+            background: rgba(255,255,255,.025);
+        }
+
+        .step-number {
+            color: #55d5aa;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .process-step h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =====================================================
+           NEWSLETTER
+        ===================================================== */
+        .notify-section {
+            padding: 100px 0;
+        }
+
+        .notify-box {
+            padding: 60px;
+            border-radius: 22px;
+            background: #f1f8f5;
+            border: 1px solid var(--border);
+        }
+
+        .notify-box h2 {
+            font-size: clamp(32px, 4vw, 45px);
+            letter-spacing: -1.5px;
+        }
+
+        .notify-box p {
+            max-width: 650px;
+            line-height: 1.85;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 10px;
+            max-width: 620px;
+            margin-top: 28px;
+        }
+
+        .email-form input {
+            flex: 1;
+            min-width: 0;
+            height: 48px;
+            padding: 0 15px;
+            border: 1px solid #cbded6;
+            border-radius: 8px;
+            outline: none;
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .email-form input:focus {
+            border-color: var(--green);
+            box-shadow:
+                0 0 0 3px rgba(8,127,91,.08);
+        }
+
+        .email-form button {
+            white-space: nowrap;
+            border: none;
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+        .cta {
+            padding: 0 0 100px;
+        }
+
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+            padding: 70px 60px;
+            border-radius: 24px;
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(255,255,255,.13),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    120deg,
+                    var(--green-dark),
+                    var(--green)
+                );
+        }
+
+        .cta-box h2 {
+            color: white;
+            font-size: clamp(34px,4vw,50px);
+            letter-spacing: -1.5px;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            color: #d8f2e8;
+            line-height: 1.8;
+        }
+
+        .cta-box .btn-light {
+            color: var(--green-dark);
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer {
+            padding-top: 70px;
+            background: #0b1814;
+            color: #9dafaa;
+        }
+
+        .footer-brand {
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        footer h5 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 11px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9dafaa;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: #55d5aa;
+        }
+
+        .social {
+            display: flex;
+            gap: 9px;
+            margin-top: 22px;
+        }
+
+        .social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2b4038;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .social a:hover {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .copyright {
+            border-top: 1px solid #21352e;
+            margin-top: 50px;
+            padding: 25px 0;
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 991px) {
+            .page-hero {
+                padding-top: 135px;
+            }
+            .filter-bar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .page-hero {
+                padding-top: 120px;
+                padding-bottom: 75px;
+            }
+
+            .page-hero h1 {
+                font-size: 44px;
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .future-box {
+                padding: 45px 25px;
+            }
+
+            .notify-box {
+                padding: 40px 25px;
+            }
+
+            .email-form {
+                flex-direction: column;
+            }
+
+            .email-form button {
+                width: 100%;
+            }
+
+            .cta-box {
+                padding: 50px 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a
+            class="navbar-brand"
+            href="index.html"
+        >
+            <span class="brand-icon">
+                <i class="bi bi-diagram-3"></i>
+            </span>
+            <span class="brand-green">
+                TREES
+            </span>
+            &nbsp;Conferences
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+            aria-controls="navigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navigation"
+        >
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="conferences.html"
+                    >
+                        Conferences
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#focus"
+                    >
+                        Scientific Areas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#involved"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <a
+                        href="#notify"
+                        class="btn btn-primary"
+                    >
+                        Stay Updated
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+<section class="page-hero">
+    <div class="container hero-content">
+        <div class="hero-label">
+            <span></span>
+            TREES Conferences
+        </div>
+        <h1>
+            Ideas come together
+            <span class="highlight">
+                here.
+            </span>
+        </h1>
+        <p class="hero-description">
+            Explore upcoming TREES conferences bringing
+            together researchers, scientists, engineers,
+            healthcare professionals, academics and
+            innovators from around the world.
+        </p>
+    </div>
+</section>
+
+<!-- =====================================================
+     BREADCRUMB
+====================================================== -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li
+                    class="breadcrumb-item active"
+                    aria-current="page"
+                >
+                    Conferences
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- =====================================================
+     UPCOMING CONFERENCES
+====================================================== -->
+<section
+    class="section-padding conference-section"
+    id="upcoming"
+>
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-8">
+                <div class="section-label">
+                    Upcoming Events
+                </div>
+                <h2 class="section-title">
+                    Find your next
+                    scientific conversation.
+                </h2>
+                <p
+                    class="section-text mb-0"
+                    style="max-width:700px;"
+                >
+                    Our conference calendar will grow as
+                    TREES develops. Each event will have
+                    its own dedicated page with dates,
+                    venue information, scientific tracks,
+                    submission details and registration
+                    information.
+                </p>
+            </div>
+        </div>
+
+        <!-- FILTER -->
+        <div class="filter-bar">
+            <div class="filter-title">
+                Browse conferences
+            </div>
+            <div class="filter-buttons">
+                <button
+                    class="filter-btn active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+                <button
+                    class="filter-btn"
+                    data-filter="technology"
+                >
+                    Technology
+                </button>
+                <button
+                    class="filter-btn"
+                    data-filter="engineering"
+                >
+                    Engineering
+                </button>
+                <button
+                    class="filter-btn"
+                    data-filter="medical"
+                >
+                    Medical
+                </button>
+                <button
+                    class="filter-btn"
+                    data-filter="sciences"
+                >
+                    Sciences
+                </button>
+            </div>
+        </div>
+
+        <!-- CONFERENCE GRID -->
+        <div
+            class="row g-4"
+            id="conferenceGrid"
+        >
+            <!-- =================================================
+                 CONFERENCE 1
+            ================================================== -->
+            <div
+                class="col-lg-6 conference-item"
+                data-category="technology sciences"
+            >
+                <div class="conference-card">
+                    <div class="conference-top">
+                        <span class="conference-code">
+                            TREES 2027 · TECH-01
+                        </span>
+                        <span class="status-badge">
+                            Coming Soon
+                        </span>
+                        <h3>
+                            International Conference on
+                            Emerging Technology & Innovation
+                        </h3>
+                    </div>
+                    <div class="conference-body">
+                        <div class="conference-meta">
+                            <div class="meta-item">
+                                <i class="bi bi-calendar3"></i>
+                                <span>
+                                    Date to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>
+                                    Location to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-laptop"></i>
+                                <span>
+                                    Format to be announced
+                                </span>
+                            </div>
+                        </div>
+                        <p>
+                            A future TREES gathering focused
+                            on emerging technologies, digital
+                            transformation and innovative
+                            approaches to solving complex
+                            challenges.
+                        </p>
+                        <div class="topic-tags">
+                            <span class="topic-tag">
+                                Artificial Intelligence
+                            </span>
+                            <span class="topic-tag">
+                                Data Science
+                            </span>
+                            <span class="topic-tag">
+                                Emerging Technology
+                            </span>
+                            <span class="topic-tag">
+                                Digital Innovation
+                            </span>
+                        </div>
+                        <div class="conference-actions">
+                            <a
+                                href="#notify"
+                                class="btn btn-primary"
+                            >
+                                Notify Me
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                            <button
+                                class="save-btn"
+                                title="Save conference"
+                                aria-label="Save conference"
+                            >
+                                <i class="bi bi-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================
+                 CONFERENCE 2
+            ================================================== -->
+            <div
+                class="col-lg-6 conference-item"
+                data-category="medical sciences"
+            >
+                <div class="conference-card">
+                    <div class="conference-top">
+                        <span class="conference-code">
+                            TREES 2027 · MED-01
+                        </span>
+                        <span class="status-badge">
+                            Coming Soon
+                        </span>
+                        <h3>
+                            International Conference on
+                            Medical & Health Sciences
+                        </h3>
+                    </div>
+                    <div class="conference-body">
+                        <div class="conference-meta">
+                            <div class="meta-item">
+                                <i class="bi bi-calendar3"></i>
+                                <span>
+                                    Date to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>
+                                    Location to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-laptop"></i>
+                                <span>
+                                    Format to be announced
+                                </span>
+                            </div>
+                        </div>
+                        <p>
+                            A multidisciplinary medical
+                            conference bringing together
+                            research and clinical perspectives
+                            across healthcare and biomedical
+                            sciences.
+                        </p>
+                        <div class="topic-tags">
+                            <span class="topic-tag">
+                                Surgery
+                            </span>
+                            <span class="topic-tag">
+                                Oncology
+                            </span>
+                            <span class="topic-tag">
+                                Cardiovascular
+                            </span>
+                            <span class="topic-tag">
+                                Digital Health
+                            </span>
+                        </div>
+                        <div class="conference-actions">
+                            <a
+                                href="#notify"
+                                class="btn btn-primary"
+                            >
+                                Notify Me
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                            <button
+                                class="save-btn"
+                                title="Save conference"
+                                aria-label="Save conference"
+                            >
+                                <i class="bi bi-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================
+                 CONFERENCE 3
+            ================================================== -->
+            <div
+                class="col-lg-6 conference-item"
+                data-category="engineering technology"
+            >
+                <div class="conference-card">
+                    <div class="conference-top">
+                        <span class="conference-code">
+                            TREES 2027 · ENG-01
+                        </span>
+                        <span class="status-badge">
+                            Coming Soon
+                        </span>
+                        <h3>
+                            International Conference on
+                            Engineering & Applied Sciences
+                        </h3>
+                    </div>
+                    <div class="conference-body">
+                        <div class="conference-meta">
+                            <div class="meta-item">
+                                <i class="bi bi-calendar3"></i>
+                                <span>
+                                    Date to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>
+                                    Location to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-laptop"></i>
+                                <span>
+                                    Format to be announced
+                                </span>
+                            </div>
+                        </div>
+                        <p>
+                            A future forum for engineering
+                            research, applied sciences,
+                            innovation, design and technologies
+                            addressing real-world challenges.
+                        </p>
+                        <div class="topic-tags">
+                            <span class="topic-tag">
+                                Engineering
+                            </span>
+                            <span class="topic-tag">
+                                Materials
+                            </span>
+                            <span class="topic-tag">
+                                Robotics
+                            </span>
+                            <span class="topic-tag">
+                                Energy
+                            </span>
+                        </div>
+                        <div class="conference-actions">
+                            <a
+                                href="#notify"
+                                class="btn btn-primary"
+                            >
+                                Notify Me
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                            <button
+                                class="save-btn"
+                                title="Save conference"
+                                aria-label="Save conference"
+                            >
+                                <i class="bi bi-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================================
+                 CONFERENCE 4
+            ================================================== -->
+            <div
+                class="col-lg-6 conference-item"
+                data-category="sciences medical"
+            >
+                <div class="conference-card">
+                    <div class="conference-top">
+                        <span class="conference-code">
+                            TREES 2027 · LIFE-01
+                        </span>
+                        <span class="status-badge">
+                            Coming Soon
+                        </span>
+                        <h3>
+                            International Conference on
+                            Life, Environmental & Empirical Sciences
+                        </h3>
+                    </div>
+                    <div class="conference-body">
+                        <div class="conference-meta">
+                            <div class="meta-item">
+                                <i class="bi bi-calendar3"></i>
+                                <span>
+                                    Date to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>
+                                    Location to be announced
+                                </span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="bi bi-laptop"></i>
+                                <span>
+                                    Format to be announced
+                                </span>
+                            </div>
+                        </div>
+                        <p>
+                            A cross-disciplinary scientific
+                            meeting exploring life sciences,
+                            environmental research,
+                            sustainability and evidence-based
+                            scientific inquiry.
+                        </p>
+                        <div class="topic-tags">
+                            <span class="topic-tag">
+                                Life Sciences
+                            </span>
+                            <span class="topic-tag">
+                                Environmental Science
+                            </span>
+                            <span class="topic-tag">
+                                Sustainability
+                            </span>
+                            <span class="topic-tag">
+                                Biotechnology
+                            </span>
+                        </div>
+                        <div class="conference-actions">
+                            <a
+                                href="#notify"
+                                class="btn btn-primary"
+                            >
+                                Notify Me
+                                <i class="bi bi-arrow-right ms-1"></i>
+                            </a>
+                            <button
+                                class="save-btn"
+                                title="Save conference"
+                                aria-label="Save conference"
+                            >
+                                <i class="bi bi-bookmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     FUTURE CONFERENCES
+====================================================== -->
+<section class="section-padding future-section">
+    <div class="container">
+        <div class="future-box text-center">
+            <div class="future-icon">
+                <i class="bi bi-calendar-plus"></i>
+            </div>
+            <div class="section-label">
+                More to Come
+            </div>
+            <h3>
+                Our conference calendar is just beginning.
+            </h3>
+            <p class="mt-3">
+                As TREES grows, new conferences will be
+                added across technology, engineering,
+                medical sciences, life sciences and
+                other areas of research.
+                Subscribe for announcements when new
+                events, dates and calls for papers are
+                released.
+            </p>
+            <a
+                href="#notify"
+                class="btn btn-primary mt-4"
+            >
+                Get Conference Updates
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     WHY ATTEND
+====================================================== -->
+<section class="section-padding why-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                The TREES Experience
+            </div>
+            <h2 class="section-title">
+                Why participate?
+            </h2>
+            <p
+                class="section-text mx-auto"
+                style="max-width:700px;"
+            >
+                Every TREES conference is intended to
+                create opportunities for learning,
+                discussion and meaningful professional
+                connections.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-easel2"></i>
+                    </div>
+                    <h3>
+                        Present Your Research
+                    </h3>
+                    <p>
+                        Share research findings, emerging
+                        ideas, methodologies and practical
+                        work with an interdisciplinary
+                        audience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-chat-square-text"></i>
+                    </div>
+                    <h3>
+                        Exchange Ideas
+                    </h3>
+                    <p>
+                        Engage in scientific discussion,
+                        ask questions and learn from
+                        perspectives beyond your immediate
+                        field.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3>
+                        Build Connections
+                    </h3>
+                    <p>
+                        Meet researchers, professionals,
+                        academics and innovators who may
+                        become future collaborators.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h3>
+                        Learn & Develop
+                    </h3>
+                    <p>
+                        Discover new developments,
+                        approaches and perspectives that
+                        can inform your own work.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-globe2"></i>
+                    </div>
+                    <h3>
+                        Think Internationally
+                    </h3>
+                    <p>
+                        Participate in a community designed
+                        to connect scientific and professional
+                        perspectives across borders.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <h3>
+                        Discover Opportunities
+                    </h3>
+                    <p>
+                        Conferences can open doors to new
+                        collaborations, research directions
+                        and professional relationships.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     CONFERENCE PROCESS
+====================================================== -->
+<section class="section-padding process-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                How TREES Conferences Work
+            </div>
+            <h2 class="section-title">
+                From announcement
+                to conversation.
+            </h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-number">
+                        STEP 01
+                    </div>
+                    <h3>
+                        Conference Announced
+                    </h3>
+                    <p>
+                        We announce the conference,
+                        scientific scope, dates and
+                        participation opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-number">
+                        STEP 02
+                    </div>
+                    <h3>
+                        Abstracts & Submissions
+                    </h3>
+                    <p>
+                        Researchers and professionals
+                        can submit their work according
+                        to the published conference
+                        guidelines.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-number">
+                        STEP 03
+                    </div>
+                    <h3>
+                        Programme
+                    </h3>
+                    <p>
+                        Accepted contributions and
+                        sessions are organized into
+                        a structured scientific programme.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step">
+                    <div class="step-number">
+                        STEP 04
+                    </div>
+                    <h3>
+                        Conference
+                    </h3>
+                    <p>
+                        Participants come together
+                        to present, discuss, learn
+                        and connect.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     NOTIFICATION
+====================================================== -->
+<section
+    class="notify-section"
+    id="notify"
+>
+    <div class="container">
+        <div class="notify-box">
+            <div class="section-label">
+                Stay Informed
+            </div>
+            <h2>
+                Be the first to know
+                when we announce a conference.
+            </h2>
+            <p class="mt-3">
+                Conference dates, calls for papers,
+                registration openings and programme
+                announcements will be published here.
+                Leave your email and we'll keep you
+                informed as TREES develops.
+            </p>
+            <form
+                class="email-form"
+                id="notifyForm"
+            >
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email address"
+                    aria-label="Your email address"
+                    required
+                >
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Notify Me
+                    <i class="bi bi-arrow-right ms-1"></i>
+                </button>
+            </form>
+            <div
+                id="formMessage"
+                class="mt-3"
+                style="display:none;"
+            >
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2>
+                        Want to be part of
+                        a future TREES conference?
+                    </h2>
+                    <p class="mt-3">
+                        Researchers, speakers, reviewers,
+                        institutions, sponsors and
+                        organizations can connect with us
+                        as we develop our conference
+                        programme.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a
+                        href="mailto:info@treesconferences.com"
+                        class="btn btn-light btn-lg"
+                    >
+                        Contact TREES
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer id="contact">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="footer-brand">
+                    TREES.
+                </div>
+                <p class="mt-3">
+                    Technology, Research, Engineering,
+                    & Empirical Sciences.
+                </p>
+                <p>
+                    A new international conference initiative
+                    connecting people, ideas and knowledge
+                    across technology, engineering, medicine,
+                    life sciences and beyond.
+                </p>
+                <div class="social">
+                    <a
+                        href="#"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a
+                        href="#"
+                        aria-label="X"
+                    >
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Explore
+                </h5>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About TREES
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conferences.html">
+                            Conferences
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Scientific Areas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Areas
+                </h5>
+                <ul>
+                    <li>
+                        <a href="index.html#focus">
+                            Technology
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Engineering
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Medical Sciences
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Life Sciences
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Sustainability
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3">
+                <h5>
+                    Contact
+                </h5>
+                <ul>
+                    <li>
+                        <i class="bi bi-envelope me-2"></i>
+                        <a
+                            href="mailto:info@treesconferences.com"
+                        >
+                            info@treesconferences.com
+                        </a>
+                    </li>
+                    <li>
+                        <i class="bi bi-globe me-2"></i>
+                        treesconferences.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6">
+                    © 2026 TREES Conferences.
+                    All rights reserved.
+                </div>
+                <div
+                    class="col-md-6 text-md-end mt-2 mt-md-0"
+                >
+                    <a
+                        href="#"
+                        class="me-3"
+                    >
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<script>
+    /*
+     * Navbar shadow
+     */
+    window.addEventListener(
+        "scroll",
+        function () {
+            const navbar =
+                document.querySelector(".navbar");
+            if (window.scrollY > 20) {
+                navbar.style.boxShadow =
+                    "0 8px 30px rgba(16,35,28,.08)";
+            } else {
+                navbar.style.boxShadow =
+                    "none";
+            }
+        }
+    );
+
+    /*
+     * Conference filtering
+     */
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+    const conferenceItems =
+        document.querySelectorAll(".conference-item");
+    filterButtons.forEach(function(button) {
+        button.addEventListener(
+            "click",
+            function() {
+                filterButtons.forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+                this.classList.add("active");
+                const filter =
+                    this.getAttribute("data-filter");
+                conferenceItems.forEach(function(item) {
+                    const categories =
+                        item
+                            .getAttribute("data-category")
+                            .split(" ");
+                    if (
+                        filter === "all" ||
+                        categories.includes(filter)
+                    ) {
+                        item.style.display = "";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            }
+        );
+    });
+
+    /*
+     * Bookmark buttons
+     */
+    document
+        .querySelectorAll(".save-btn")
+        .forEach(function(button) {
+            button.addEventListener(
+                "click",
+                function() {
+                    const icon =
+                        this.querySelector("i");
+                    if (
+                        icon.classList.contains(
+                            "bi-bookmark"
+                        )
+                    ) {
+                        icon.classList.remove(
+                            "bi-bookmark"
+                        );
+                        icon.classList.add(
+                            "bi-bookmark-fill"
+                        );
+                    } else {
+                        icon.classList.remove(
+                            "bi-bookmark-fill"
+                        );
+                        icon.classList.add(
+                            "bi-bookmark"
+                        );
+                    }
+                }
+            );
+        });
+
+    /*
+     * Notification form
+     *
+     * Replace this with your backend/API
+     * when the email subscription system
+     * is ready.
+     */
+    document
+        .getElementById("notifyForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+                const message =
+                    document.getElementById(
+                        "formMessage"
+                    );
+                message.style.display = "block";
+                message.style.color =
+                    "#087f5b";
+                message.style.fontSize =
+                    "13px";
+                message.style.fontWeight =
+                    "600";
+                message.innerHTML =
+                    '<i class="bi bi-check-circle-fill me-1"></i>' +
+                    'Thank you. We\'ll keep you informed about upcoming TREES conferences.';
+                this.reset();
+            }
+        );
+
+    /*
+     * Close mobile navigation
+     */
+    document
+        .querySelectorAll(".navbar .nav-link")
+        .forEach(function(link) {
+            link.addEventListener(
+                "click",
+                function() {
+                    const navigation =
+                        document.querySelector(
+                            "#navigation"
+                        );
+                    if (
+                        navigation.classList.contains(
+                            "show"
+                        )
+                    ) {
+                        const collapse =
+                            bootstrap.Collapse
+                                .getInstance(
+                                    navigation
+                                );
+                        if (collapse) {
+                            collapse.hide();
+                        }
+                    }
+                }
+            );
+        });
+</script>
+</body>
+</html>
