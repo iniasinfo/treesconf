@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Submit Abstract | TREES Conferences</title>
+    <meta
+        name="description"
+        content="Submit your research abstract to a TREES international conference."
+    >
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --green: #087f5b;
+            --green-dark: #056044;
+            --green-light: #e9f7f1;
+            --dark: #10231c;
+            --text: #596861;
+            --muted: #7b8983;
+            --border: #dfeae5;
+            --cream: #f7faf8;
+            --danger: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #f7faf8;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Manrope", sans-serif;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+        .navbar {
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            padding: 17px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: var(--dark) !important;
+            font-family: "Manrope", sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background: var(--green);
+            color: white;
+            border-radius: 11px;
+            font-size: 21px;
+        }
+
+        .brand-green {
+            color: var(--green);
+        }
+
+        .nav-link {
+            color: #384840 !important;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--green) !important;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 12px 22px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+        }
+
+        .btn-outline-primary {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+        .page-hero {
+            padding-top: 145px;
+            padding-bottom: 70px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,.10),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    125deg,
+                    #064d39,
+                    #087f5b
+                );
+            color: white;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 13px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,.08);
+            color: #d9f5e9;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .page-hero h1 {
+            color: white;
+            font-size: clamp(42px, 5vw, 62px);
+            line-height: 1.1;
+            letter-spacing: -2.5px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero p {
+            max-width: 720px;
+            color: #d9f2e8;
+            font-size: 17px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =====================================================
+           CONFERENCE BAR
+        ===================================================== */
+        .conference-bar {
+            margin-top: -28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .conference-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 23px 28px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: white;
+            box-shadow:
+                0 15px 45px rgba(16,35,28,.08);
+        }
+
+        .conference-name {
+            color: var(--dark);
+            font-family: "Manrope", sans-serif;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .conference-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .conference-meta i {
+            color: var(--green);
+            margin-right: 4px;
+        }
+
+        /* =====================================================
+           MAIN
+        ===================================================== */
+        .submission-area {
+            padding: 65px 0 100px;
+        }
+
+        .section-card {
+            margin-bottom: 25px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 25px;
+        }
+
+        .section-number {
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 9px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 21px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: -13px;
+            margin-bottom: 25px;
+        }
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+        .form-label {
+            color: var(--dark);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        .form-control,
+        .form-select {
+            min-height: 48px;
+            border: 1px solid #d7e4de;
+            border-radius: 8px;
+            font-size: 13px;
+            box-shadow: none !important;
+        }
+
+        textarea.form-control {
+            min-height: auto;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--green);
+            box-shadow:
+                0 0 0 3px rgba(8,127,91,.08) !important;
+        }
+
+        .form-text {
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           PRESENTATION TYPE
+        ===================================================== */
+        .presentation-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .presentation-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .presentation-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .presentation-card {
+            height: 100%;
+            padding: 20px;
+            border: 1.5px solid var(--border);
+            border-radius: 11px;
+            background: white;
+            transition: .2s ease;
+        }
+
+        .presentation-card:hover {
+            border-color: #9acbbb;
+            transform: translateY(-2px);
+        }
+
+        .presentation-option input:checked
+        + .presentation-card {
+            border-color: var(--green);
+            background: var(--green-light);
+        }
+
+        .presentation-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 13px;
+            border-radius: 9px;
+            background: #edf5f1;
+            color: var(--green);
+            font-size: 18px;
+        }
+
+        .presentation-card h3 {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .presentation-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* =====================================================
+           ABSTRACT
+        ===================================================== */
+        .abstract-editor {
+            position: relative;
+        }
+
+        #abstractText {
+            min-height: 280px;
+            resize: vertical;
+            line-height: 1.8;
+        }
+
+        .word-counter {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        .word-counter.warning {
+            color: #d97706;
+        }
+
+        .word-counter.error {
+            color: var(--danger);
+        }
+
+        /* =====================================================
+           KEYWORDS
+        ===================================================== */
+        .keyword-help {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           CO-AUTHORS
+        ===================================================== */
+        .author-row {
+            position: relative;
+            padding: 20px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: #fbfdfc;
+        }
+
+        .author-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            margin-bottom: 13px;
+            border-radius: 7px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .remove-author {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            border: 0;
+            background: transparent;
+            color: #a1ada8;
+            font-size: 16px;
+        }
+
+        .remove-author:hover {
+            color: var(--danger);
+        }
+
+        .add-author {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            border: 1px dashed #b9cec4;
+            border-radius: 8px;
+            background: white;
+            color: var(--green);
+            padding: 10px 15px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .add-author:hover {
+            background: var(--green-light);
+        }
+
+        /* =====================================================
+           FILE UPLOAD
+        ===================================================== */
+        .upload-box {
+            display: block;
+            padding: 35px 25px;
+            border: 1.5px dashed #b8cec4;
+            border-radius: 11px;
+            background: #fbfdfc;
+            text-align: center;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .upload-box:hover {
+            border-color: var(--green);
+            background: var(--green-light);
+        }
+
+        .upload-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 13px;
+            border-radius: 13px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 23px;
+        }
+
+        .upload-title {
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .upload-description {
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        #abstractFile {
+            display: none;
+        }
+
+        #fileName {
+            margin-top: 12px;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           INFO ALERT
+        ===================================================== */
+        .info-alert {
+            padding: 15px 17px;
+            border: 1px solid #cce6da;
+            border-radius: 9px;
+            background: var(--green-light);
+            color: #366957;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+        .sidebar-wrapper {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            overflow: hidden;
+            margin-bottom: 18px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+        }
+
+        .sidebar-header {
+            padding: 22px 23px;
+            background: var(--dark);
+        }
+
+        .sidebar-header h3 {
+            color: white;
+            font-size: 17px;
+            margin: 0;
+        }
+
+        .sidebar-header p {
+            margin: 5px 0 0;
+            color: #9dafaa;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .sidebar-body {
+            padding: 22px;
+        }
+
+        .step {
+            display: flex;
+            gap: 12px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #edf2ef;
+        }
+
+        .step:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 8px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .step h4 {
+            margin: 0 0 4px;
+            font-size: 12px;
+        }
+
+        .step p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        .deadline {
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--green-light);
+        }
+
+        .deadline-label {
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .deadline-date {
+            margin-top: 6px;
+            color: var(--dark);
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .deadline-note {
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 10px;
+        }
+
+        /* =====================================================
+           SUBMIT AREA
+        ===================================================== */
+        .submission-note {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e3ebe7;
+            border-radius: 9px;
+            background: #fbfdfc;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .submission-note i {
+            flex-shrink: 0;
+            color: var(--green);
+            font-size: 16px;
+        }
+
+        .terms {
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        .terms a {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           SUCCESS MESSAGE
+        ===================================================== */
+        .success-box {
+            display: none;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid #bfe1d1;
+            border-radius: 14px;
+            background: var(--green-light);
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: var(--green);
+            color: white;
+            font-size: 27px;
+        }
+
+        .success-box h2 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .success-box p {
+            max-width: 600px;
+            margin: auto;
+            color: var(--text);
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer {
+            padding: 65px 0 25px;
+            background: #0b1814;
+            color: #9dafaa;
+        }
+
+        .footer-brand {
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        footer p {
+            max-width: 500px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        footer h5 {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+            font-size: 13px;
+        }
+
+        footer a {
+            color: #9dafaa;
+        }
+
+        footer a:hover {
+            color: #55d5aa;
+        }
+
+        .copyright {
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px solid #21352e;
+            font-size: 11px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 991px) {
+            .sidebar-wrapper {
+                position: static;
+            }
+
+            .presentation-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-hero {
+                padding-top: 125px;
+                padding-bottom: 60px;
+            }
+
+            .page-hero h1 {
+                font-size: 42px;
+            }
+
+            .conference-bar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .submission-area {
+                padding-top: 45px;
+            }
+
+            .section-card {
+                padding: 22px;
+            }
+
+            .presentation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a
+            class="navbar-brand"
+            href="index.html"
+        >
+            <span class="brand-icon">
+                <i class="bi bi-diagram-3"></i>
+            </span>
+            <span class="brand-green">
+                TREES
+            </span>
+            &nbsp;Conferences
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navigation"
+        >
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="conferences.html"
+                    >
+                        Conferences
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#focus"
+                    >
+                        Scientific Areas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#involved"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-label">
+            Call for Abstracts
+        </div>
+        <h1>
+            Share your
+            research with TREES.
+        </h1>
+        <p>
+            Submit your abstract for consideration at
+            our international conference. We welcome
+            original research, emerging ideas,
+            interdisciplinary work and practical insights.
+        </p>
+    </div>
+</section>
+
+<!-- =====================================================
+     CONFERENCE BAR
+====================================================== -->
+<div class="conference-bar">
+    <div class="container">
+        <div class="conference-bar-inner">
+            <div>
+                <div class="conference-name">
+                    International Conference on
+                    Medical & Health Sciences
+                </div>
+                <div class="conference-meta">
+                    <span>
+                        <i class="bi bi-calendar3"></i>
+                        18–20 September 2027
+                    </span>
+                    <span>
+                        <i class="bi bi-geo-alt"></i>
+                        Hyderabad, India
+                    </span>
+                    <span>
+                        <i class="bi bi-clock"></i>
+                        Abstract deadline:
+                        30 June 2027
+                    </span>
+                </div>
+            </div>
+            <div>
+                <span
+                    class="badge rounded-pill text-bg-light"
+                >
+                    Call for Abstracts Open
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+<section class="submission-area">
+    <div class="container">
+        <div class="row g-4">
+            <!-- =================================================
+                 LEFT / FORM
+            ================================================== -->
+            <div class="col-lg-8">
+                <!-- SUCCESS MESSAGE -->
+                <div
+                    class="success-box"
+                    id="successMessage"
+                >
+                    <div class="success-icon">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+                    <h2>
+                        Abstract submitted
+                    </h2>
+                    <p>
+                        Thank you for submitting your
+                        abstract to TREES. Your submission
+                        has been received successfully.
+                        <br><br>
+                        A confirmation email will be sent
+                        to the corresponding author.
+                    </p>
+                </div>
+
+                <form
+                    id="abstractForm"
+                    class="needs-validation"
+                    novalidate
+                >
+                    <!-- =========================================
+                         AUTHOR DETAILS
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                01
+                            </div>
+                            <h2>
+                                Corresponding author
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Please provide the details of the
+                            author who will receive all
+                            correspondence regarding this
+                            submission.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label
+                                    for="firstName"
+                                    class="form-label"
+                                >
+                                    First Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="firstName"
+                                    name="first_name"
+                                    placeholder="First name"
+                                    required
+                                >
+                                <div class="invalid-feedback">
+                                    Please enter your first name.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="lastName"
+                                    class="form-label"
+                                >
+                                    Last Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    name="last_name"
+                                    placeholder="Last name"
+                                    required
+                                >
+                                <div class="invalid-feedback">
+                                    Please enter your last name.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="email"
+                                    class="form-label"
+                                >
+                                    Email Address
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="phone"
+                                    class="form-label"
+                                >
+                                    Phone / WhatsApp
+                                </label>
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+91 ..."
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="country"
+                                    class="form-label"
+                                >
+                                    Country
+                                    <span class="required">*</span>
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="country"
+                                    name="country"
+                                    required
+                                >
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Select country
+                                    </option>
+                                    <option>
+                                        India
+                                    </option>
+                                    <option>
+                                        United States
+                                    </option>
+                                    <option>
+                                        United Kingdom
+                                    </option>
+                                    <option>
+                                        Australia
+                                    </option>
+                                    <option>
+                                        Canada
+                                    </option>
+                                    <option>
+                                        Germany
+                                    </option>
+                                    <option>
+                                        France
+                                    </option>
+                                    <option>
+                                        Japan
+                                    </option>
+                                    <option>
+                                        Singapore
+                                    </option>
+                                    <option>
+                                        Other
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select your country.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="organization"
+                                    class="form-label"
+                                >
+                                    Institution / Organization
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="organization"
+                                    name="organization"
+                                    placeholder="University, Hospital, Company, etc."
+                                    required
+                                >
+                                <div class="invalid-feedback">
+                                    Please enter your institution.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="designation"
+                                    class="form-label"
+                                >
+                                    Designation
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="designation"
+                                    name="designation"
+                                    placeholder="Professor, Researcher, Physician, Student..."
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label
+                                    for="department"
+                                    class="form-label"
+                                >
+                                    Department
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="department"
+                                    name="department"
+                                    placeholder="Department / Division"
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         PRESENTATION
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                02
+                            </div>
+                            <h2>
+                                Presentation details
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Tell us how you would like your
+                            work to be considered.
+                        </p>
+                        <label class="form-label mb-3">
+                            Preferred presentation type
+                            <span class="required">*</span>
+                        </label>
+                        <div class="presentation-grid">
+                            <!-- ORAL -->
+                            <label class="presentation-option">
+                                <input
+                                    type="radio"
+                                    name="presentation_type"
+                                    value="oral"
+                                    required
+                                >
+                                <div class="presentation-card">
+                                    <div class="presentation-icon">
+                                        <i class="bi bi-mic"></i>
+                                    </div>
+                                    <h3>
+                                        Oral Presentation
+                                    </h3>
+                                    <p>
+                                        Present your research
+                                        as a scheduled oral talk.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- POSTER -->
+                            <label class="presentation-option">
+                                <input
+                                    type="radio"
+                                    name="presentation_type"
+                                    value="poster"
+                                    required
+                                >
+                                <div class="presentation-card">
+                                    <div class="presentation-icon">
+                                        <i class="bi bi-grid-3x3"></i>
+                                    </div>
+                                    <h3>
+                                        Poster Presentation
+                                    </h3>
+                                    <p>
+                                        Present your work in
+                                        the conference poster session.
+                                    </p>
+                                </div>
+                            </label>
+
+                            <!-- EITHER -->
+                            <label class="presentation-option">
+                                <input
+                                    type="radio"
+                                    name="presentation_type"
+                                    value="either"
+                                    required
+                                >
+                                <div class="presentation-card">
+                                    <div class="presentation-icon">
+                                        <i class="bi bi-arrow-left-right"></i>
+                                    </div>
+                                    <h3>
+                                        Either
+                                    </h3>
+                                    <p>
+                                        Open to oral or poster
+                                        presentation.
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         SCIENTIFIC AREA
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                03
+                            </div>
+                            <h2>
+                                Scientific area
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Select the scientific area that
+                            best matches your submission.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-7">
+                                <label
+                                    for="scientificArea"
+                                    class="form-label"
+                                >
+                                    Primary Scientific Area
+                                    <span class="required">*</span>
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="scientificArea"
+                                    name="scientific_area"
+                                    required
+                                >
+                                    <option
+                                        value=""
+                                        selected
+                                        disabled
+                                    >
+                                        Select an area
+                                    </option>
+                                    <option>
+                                        Surgery
+                                    </option>
+                                    <option>
+                                        Oncology & Cancer Research
+                                    </option>
+                                    <option>
+                                        Cardiovascular Sciences
+                                    </option>
+                                    <option>
+                                        Neuroscience & Neurology
+                                    </option>
+                                    <option>
+                                        Public Health
+                                    </option>
+                                    <option>
+                                        Clinical Medicine
+                                    </option>
+                                    <option>
+                                        Biomedical Sciences
+                                    </option>
+                                    <option>
+                                        Biotechnology
+                                    </option>
+                                    <option>
+                                        Artificial Intelligence &
+                                        Machine Learning
+                                    </option>
+                                    <option>
+                                        Engineering & Technology
+                                    </option>
+                                    <option>
+                                        Environmental Sciences
+                                    </option>
+                                    <option>
+                                        Life Sciences
+                                    </option>
+                                    <option>
+                                        Pharmaceutical Sciences
+                                    </option>
+                                    <option>
+                                        Materials Science
+                                    </option>
+                                    <option>
+                                        Data Science
+                                    </option>
+                                    <option>
+                                        Other
+                                    </option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a scientific area.
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <label
+                                    for="track"
+                                    class="form-label"
+                                >
+                                    Conference Track
+                                </label>
+                                <select
+                                    class="form-select"
+                                    id="track"
+                                    name="track"
+                                >
+                                    <option
+                                        value=""
+                                        selected
+                                    >
+                                        Select track
+                                    </option>
+                                    <option>
+                                        Fundamental Research
+                                    </option>
+                                    <option>
+                                        Clinical & Applied Research
+                                    </option>
+                                    <option>
+                                        Technology & Innovation
+                                    </option>
+                                    <option>
+                                        Interdisciplinary Research
+                                    </option>
+                                    <option>
+                                        Emerging Topics
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label
+                                    for="keywords"
+                                    class="form-label"
+                                >
+                                    Keywords
+                                    <span class="required">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="keywords"
+                                    name="keywords"
+                                    placeholder="e.g. oncology, immunotherapy, biomarkers, precision medicine"
+                                    required
+                                >
+                                <div class="keyword-help">
+                                    Enter 3–6 keywords separated
+                                    by commas.
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter your keywords.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         ABSTRACT
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                04
+                            </div>
+                            <h2>
+                                Abstract
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Provide a concise summary of your
+                            research. Please follow the
+                            conference abstract guidelines.
+                        </p>
+                        <label
+                            for="abstractText"
+                            class="form-label"
+                        >
+                            Abstract Title
+                            <span class="required">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            class="form-control mb-4"
+                            id="abstractTitle"
+                            name="abstract_title"
+                            placeholder="Enter the title of your research"
+                            maxlength="250"
+                            required
+                        >
+                        <div class="invalid-feedback">
+                            Please enter your abstract title.
+                        </div>
+                        <label
+                            for="abstractText"
+                            class="form-label"
+                        >
+                            Abstract Text
+                            <span class="required">*</span>
+                        </label>
+                        <div class="abstract-editor">
+                            <textarea
+                                class="form-control"
+                                id="abstractText"
+                                name="abstract_text"
+                                placeholder="Enter your abstract here..."
+                                maxlength="2500"
+                                required
+                            ></textarea>
+                            <div class="word-counter">
+                                <span id="wordCount">
+                                    0 words
+                                </span>
+                                <span id="characterCount">
+                                    0 / 2500 characters
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-text mt-3">
+                            Recommended structure:
+                            Background / Objective,
+                            Methods, Results and Conclusion.
+                            Maximum 2500 characters for
+                            this template.
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         CO-AUTHORS
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                05
+                            </div>
+                            <h2>
+                                Co-authors
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Add other authors who contributed
+                            to the submitted work.
+                        </p>
+                        <div id="authorsContainer">
+                            <!-- AUTHOR 1 -->
+                            <div class="author-row">
+                                <div class="author-number">
+                                    AUTHOR 1
+                                </div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Full Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="coauthor_name[]"
+                                            placeholder="Full name"
+                                        >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Email
+                                        </label>
+                                        <input
+                                            type="email"
+                                            class="form-control"
+                                            name="coauthor_email[]"
+                                            placeholder="author@example.com"
+                                        >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Institution
+                                        </label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            name="coauthor_institution[]"
+                                            placeholder="University / Hospital / Organization"
+                                        >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">
+                                            Country
+                                        </label>
+                                        <select
+                                            class="form-select"
+                                            name="coauthor_country[]"
+                                        >
+                                            <option value="">
+                                                Select country
+                                            </option>
+                                            <option>
+                                                India
+                                            </option>
+                                            <option>
+                                                United States
+                                            </option>
+                                            <option>
+                                                United Kingdom
+                                            </option>
+                                            <option>
+                                                Australia
+                                            </option>
+                                            <option>
+                                                Canada
+                                            </option>
+                                            <option>
+                                                Germany
+                                            </option>
+                                            <option>
+                                                Other
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            type="button"
+                            class="add-author"
+                            id="addAuthor"
+                        >
+                            <i class="bi bi-plus-circle"></i>
+                            Add another author
+                        </button>
+                    </div>
+
+                    <!-- =========================================
+                         FILE UPLOAD
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                06
+                            </div>
+                            <h2>
+                                Supporting document
+                            </h2>
+                        </div>
+                        <p class="section-description">
+                            Upload your abstract document if
+                            required by this conference.
+                        </p>
+                        <label
+                            for="abstractFile"
+                            class="upload-box"
+                        >
+                            <div class="upload-icon">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                            </div>
+                            <div class="upload-title">
+                                Click to upload your abstract
+                            </div>
+                            <div class="upload-description">
+                                PDF or DOC/DOCX · Maximum 5 MB
+                            </div>
+                            <div id="fileName"></div>
+                        </label>
+                        <input
+                            type="file"
+                            id="abstractFile"
+                            name="abstract_file"
+                            accept=".pdf,.doc,.docx"
+                        >
+                    </div>
+
+                    <!-- =========================================
+                         DECLARATION
+                    ========================================== -->
+                    <div class="section-card">
+                        <div class="section-heading">
+                            <div class="section-number">
+                                07
+                            </div>
+                            <h2>
+                                Declaration
+                            </h2>
+                        </div>
+                        <div class="submission-note">
+                            <i class="bi bi-info-circle"></i>
+                            <div>
+                                Please ensure that all author
+                                names, affiliations and research
+                                information are correct before
+                                submission. Changes may require
+                                approval after the abstract has
+                                entered the review process.
+                            </div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="originalWork"
+                                required
+                            >
+                            <label
+                                class="form-check-label terms"
+                                for="originalWork"
+                            >
+                                I confirm that this submission
+                                represents original work and that
+                                I have permission from all listed
+                                authors to submit this abstract.
+                            </label>
+                            <div class="invalid-feedback">
+                                Please confirm this declaration.
+                            </div>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="reviewConsent"
+                                required
+                            >
+                            <label
+                                class="form-check-label terms"
+                                for="reviewConsent"
+                            >
+                                I understand that the abstract
+                                may be reviewed by the TREES
+                                scientific committee and may be
+                                accepted for oral presentation,
+                                poster presentation or declined.
+                            </label>
+                            <div class="invalid-feedback">
+                                Please confirm that you understand
+                                the review process.
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="updates"
+                            >
+                            <label
+                                class="form-check-label terms"
+                                for="updates"
+                            >
+                                I would like to receive updates
+                                about this and future TREES
+                                conferences.
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- =========================================
+                         SUBMIT
+                    ========================================== -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg w-100"
+                    >
+                        Submit Abstract
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- =================================================
+                 RIGHT SIDEBAR
+            ================================================== -->
+            <div class="col-lg-4">
+                <div class="sidebar-wrapper">
+                    <!-- SUBMISSION PROCESS -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h3>
+                                Submission process
+                            </h3>
+                            <p>
+                                What happens after you submit?
+                            </p>
+                        </div>
+                        <div class="sidebar-body">
+                            <div class="step">
+                                <div class="step-number">
+                                    01
+                                </div>
+                                <div>
+                                    <h4>
+                                        Submit
+                                    </h4>
+                                    <p>
+                                        Complete the form and
+                                        submit your abstract.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">
+                                    02
+                                </div>
+                                <div>
+                                    <h4>
+                                        Review
+                                    </h4>
+                                    <p>
+                                        The scientific committee
+                                        reviews your submission.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">
+                                    03
+                                </div>
+                                <div>
+                                    <h4>
+                                        Decision
+                                    </h4>
+                                    <p>
+                                        You receive an acceptance
+                                        or review decision by email.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">
+                                    04
+                                </div>
+                                <div>
+                                    <h4>
+                                        Present
+                                    </h4>
+                                    <p>
+                                        Accepted presenters can
+                                        complete registration and
+                                        prepare their presentation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DEADLINE -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-body">
+                            <div class="deadline">
+                                <div class="deadline-label">
+                                    Abstract Deadline
+                                </div>
+                                <div class="deadline-date">
+                                    30 June 2027
+                                </div>
+                                <div class="deadline-note">
+                                    Submissions received after
+                                    the deadline may be considered
+                                    subject to availability.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GUIDELINES -->
+                    <div class="sidebar-card">
+                        <div class="sidebar-header">
+                            <h3>
+                                Abstract guidelines
+                            </h3>
+                            <p>
+                                Before you submit
+                            </p>
+                        </div>
+                        <div class="sidebar-body">
+                            <ul
+                                class="mb-0 ps-3"
+                                style="
+                                    color:#596861;
+                                    font-size:11px;
+                                    line-height:1.9;
+                                "
+                            >
+                                <li>
+                                    Use a clear and descriptive
+                                    title.
+                                </li>
+                                <li>
+                                    Include the main objective
+                                    of your research.
+                                </li>
+                                <li>
+                                    Briefly describe methodology.
+                                </li>
+                                <li>
+                                    Highlight important findings.
+                                </li>
+                                <li>
+                                    State the main conclusion.
+                                </li>
+                                <li>
+                                    Provide 3–6 keywords.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- HELP -->
+                    <div
+                        class="sidebar-card"
+                        style="padding:22px;"
+                    >
+                        <h4
+                            style="
+                                font-size:16px;
+                                margin-bottom:8px;
+                            "
+                        >
+                            Need help?
+                        </h4>
+                        <p
+                            style="
+                                font-size:11px;
+                                line-height:1.7;
+                                margin-bottom:13px;
+                            "
+                        >
+                            If you have questions about
+                            abstract submission or presentation
+                            formats, contact the TREES team.
+                        </p>
+                        <a
+                            href="mailto:abstracts@treesconferences.com"
+                            class="btn btn-outline-primary btn-sm"
+                        >
+                            <i class="bi bi-envelope me-1"></i>
+                            Contact Abstract Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="footer-brand">
+                    TREES.
+                </div>
+                <p class="mt-3">
+                    Technology, Research, Engineering,
+                    & Empirical Sciences.
+                </p>
+                <p>
+                    An international conference initiative
+                    connecting people, ideas and knowledge
+                    across technology, engineering, medicine,
+                    life sciences and beyond.
+                </p>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Explore
+                </h5>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conferences.html">
+                            Conferences
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Conference
+                </h5>
+                <ul>
+                    <li>
+                        <a href="conference-detail.html">
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conference-detail.html#tracks">
+                            Scientific Tracks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="submit-abstract.html">
+                            Submit Abstract
+                        </a>
+                    </li>
+                    <li>
+                        <a href="registration.html">
+                            Registration
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <h5>
+                    Contact
+                </h5>
+                <ul>
+                    <li>
+                        <a
+                            href="mailto:info@treesconferences.com"
+                        >
+                            info@treesconferences.com
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="mailto:abstracts@treesconferences.com"
+                        >
+                            abstracts@treesconferences.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 TREES Conferences.
+            All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+<script>
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+        /* =================================================
+           ABSTRACT WORD / CHARACTER COUNTER
+        ================================================= */
+        const abstractText =
+            document.getElementById(
+                "abstractText"
+            );
+        const wordCount =
+            document.getElementById(
+                "wordCount"
+            );
+        const characterCount =
+            document.getElementById(
+                "characterCount"
+            );
+        function updateCounter() {
+            const text =
+                abstractText.value.trim();
+            const characters =
+                abstractText.value.length;
+            let words = 0;
+            if (text.length > 0) {
+                words =
+                    text.split(/\s+/).length;
+            }
+            wordCount.textContent =
+                words +
+                (words === 1 ? " word" : " words");
+            characterCount.textContent =
+                characters +
+                " / 2500 characters";
+            /*
+             * Visual warning
+             */
+            if (characters >= 2300) {
+                characterCount.classList.add(
+                    "warning"
+                );
+            } else {
+                characterCount.classList.remove(
+                    "warning"
+                );
+            }
+            if (characters >= 2500) {
+                characterCount.classList.add(
+                    "error"
+                );
+            } else {
+                characterCount.classList.remove(
+                    "error"
+                );
+            }
+        }
+        abstractText.addEventListener(
+            "input",
+            updateCounter
+        );
+        updateCounter();
+
+        /* =================================================
+           FILE UPLOAD
+        ================================================= */
+        const fileInput =
+            document.getElementById(
+                "abstractFile"
+            );
+        const fileName =
+            document.getElementById(
+                "fileName"
+            );
+        fileInput.addEventListener(
+            "change",
+            function () {
+                if (!this.files.length) {
+                    fileName.textContent = "";
+                    return;
+                }
+                const file =
+                    this.files[0];
+                const maxSize =
+                    5 * 1024 * 1024;
+                const allowedTypes = [
+                    "application/pdf",
+                    "application/msword",
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                ];
+                /*
+                 * File size validation
+                 */
+                if (file.size > maxSize) {
+                    alert(
+                        "The selected file is larger than 5 MB."
+                    );
+                    this.value = "";
+                    fileName.textContent = "";
+                    return;
+                }
+                /*
+                 * File type validation
+                 */
+                if (
+                    !allowedTypes.includes(
+                        file.type
+                    )
+                ) {
+                    alert(
+                        "Please upload a PDF, DOC or DOCX file."
+                    );
+                    this.value = "";
+                    fileName.textContent = "";
+                    return;
+                }
+                fileName.innerHTML =
+                    '<i class="bi bi-file-earmark-text me-1"></i> ' +
+                    file.name;
+            }
+        );
+
+        /* =================================================
+           ADD CO-AUTHOR
+        ================================================= */
+        const authorsContainer =
+            document.getElementById(
+                "authorsContainer"
+            );
+        const addAuthorButton =
+            document.getElementById(
+                "addAuthor"
+            );
+        let authorNumber = 1;
+        function updateAuthorNumbers() {
+            const authors =
+                authorsContainer.querySelectorAll(
+                    ".author-row"
+                );
+            authors.forEach(
+                function (author, index) {
+                    const number =
+                        author.querySelector(
+                            ".author-number"
+                        );
+                    number.textContent =
+                        "AUTHOR " +
+                        (index + 1);
+                }
+            );
+        }
+        addAuthorButton.addEventListener(
+            "click",
+            function () {
+                authorNumber++;
+                const author =
+                    document.createElement(
+                        "div"
+                    );
+                author.className =
+                    "author-row";
+                author.innerHTML = `
+                    <button
+                        type="button"
+                        class="remove-author"
+                        title="Remove author"
+                    >
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                    <div class="author-number">
+                        AUTHOR ${authorNumber}
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="coauthor_name[]"
+                                placeholder="Full name"
+                            >
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Email
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="coauthor_email[]"
+                                placeholder="author@example.com"
+                            >
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Institution
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="coauthor_institution[]"
+                                placeholder="University / Hospital / Organization"
+                            >
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">
+                                Country
+                            </label>
+                            <select
+                                class="form-select"
+                                name="coauthor_country[]"
+                            >
+                                <option value="">
+                                    Select country
+                                </option>
+                                <option>
+                                    India
+                                </option>
+                                <option>
+                                    United States
+                                </option>
+                                <option>
+                                    United Kingdom
+                                </option>
+                                <option>
+                                    Australia
+                                </option>
+                                <option>
+                                    Canada
+                                </option>
+                                <option>
+                                    Germany
+                                </option>
+                                <option>
+                                    France
+                                </option>
+                                <option>
+                                    Japan
+                                </option>
+                                <option>
+                                    Singapore
+                                </option>
+                                <option>
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                `;
+                authorsContainer.appendChild(
+                    author
+                );
+                const removeButton =
+                    author.querySelector(
+                        ".remove-author"
+                    );
+                removeButton.addEventListener(
+                    "click",
+                    function () {
+                        author.remove();
+                        updateAuthorNumbers();
+                    }
+                );
+                updateAuthorNumbers();
+            }
+        );
+
+        /* =================================================
+           BOOTSTRAP VALIDATION
+        ================================================= */
+        const form =
+            document.getElementById(
+                "abstractForm"
+            );
+        form.addEventListener(
+            "submit",
+            function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add(
+                    "was-validated"
+                );
+                /*
+                 * Prevent submission for demo.
+                 *
+                 * Replace this section with your
+                 * backend endpoint later.
+                 */
+                if (form.checkValidity()) {
+                    event.preventDefault();
+                    /*
+                     * Hide form
+                     */
+                    form.style.display =
+                        "none";
+                    /*
+                     * Show success message
+                     */
+                    document
+                        .getElementById(
+                            "successMessage"
+                        )
+                        .style.display =
+                        "block";
+                    /*
+                     * Scroll to success
+                     */
+                    document
+                        .getElementById(
+                            "successMessage"
+                        )
+                        .scrollIntoView({
+                            behavior: "smooth",
+                            block: "center"
+                        });
+                }
+            },
+            false
+        );
+    }
+);
+</script>
+</body>
+</html>
