@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>
+        International Conference on Medical & Health Sciences | TREES Conferences
+    </title>
+    <meta
+        name="description"
+        content="International Conference on Medical & Health Sciences organized by TREES Conferences."
+    >
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <!-- Bootstrap Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet"
+    >
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --green: #087f5b;
+            --green-dark: #056044;
+            --green-light: #e9f7f1;
+            --dark: #10231c;
+            --text: #596861;
+            --muted: #7b8983;
+            --border: #dfeae5;
+            --cream: #f7faf8;
+            --blue: #2563eb;
+            --purple: #7c3aed;
+            --orange: #ea580c;
+            --red: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Manrope", sans-serif;
+            color: var(--dark);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .section-padding {
+            padding: 95px 0;
+        }
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+        .navbar {
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,.05);
+            padding: 17px 0;
+            transition: .3s ease;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: var(--dark) !important;
+            font-family: "Manrope", sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -.7px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            background: var(--green);
+            color: white;
+            border-radius: 11px;
+            font-size: 21px;
+        }
+
+        .brand-green {
+            color: var(--green);
+        }
+
+        .nav-link {
+            color: #384840 !important;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 7px;
+        }
+
+        .nav-link:hover {
+            color: var(--green) !important;
+        }
+
+        .btn {
+            border-radius: 8px;
+            padding: 12px 22px;
+            font-weight: 700;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+        }
+
+        .btn-outline-primary {
+            color: var(--green);
+            border-color: var(--green);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: white;
+        }
+
+        /* =====================================================
+           CONFERENCE HERO
+        ===================================================== */
+        .conference-hero {
+            position: relative;
+            overflow: hidden;
+            padding-top: 155px;
+            padding-bottom: 80px;
+            color: white;
+            background:
+                radial-gradient(
+                    circle at 88% 15%,
+                    rgba(255,255,255,.13),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(255,255,255,.08),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    125deg,
+                    #064d39,
+                    #087f5b
+                );
+        }
+
+        .conference-hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -280px;
+            top: -220px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+        }
+
+        .conference-hero::after {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            right: -160px;
+            top: -110px;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .conference-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 12px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255,255,255,.2);
+            border-radius: 50px;
+            background: rgba(255,255,255,.10);
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .9px;
+        }
+
+        .conference-status span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #6ee7b7;
+        }
+
+        .conference-code {
+            color: rgba(255,255,255,.7);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .conference-hero h1 {
+            max-width: 950px;
+            color: white;
+            font-size: clamp(42px, 6vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -2.8px;
+            margin-bottom: 25px;
+        }
+
+        .conference-intro {
+            max-width: 780px;
+            color: #d8f2e8;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-actions .btn-light {
+            color: var(--green-dark);
+        }
+
+        .hero-actions .btn-outline-light:hover {
+            color: var(--green-dark);
+        }
+
+        /* =====================================================
+           CONFERENCE INFO BAR
+        ===================================================== */
+        .info-bar {
+            position: relative;
+            z-index: 5;
+            margin-top: -35px;
+        }
+
+        .info-box {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: white;
+            box-shadow:
+                0 15px 50px rgba(16,35,28,.08);
+        }
+
+        .info-item {
+            padding: 27px 25px;
+            border-right: 1px solid var(--border);
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-icon {
+            color: var(--green);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-label {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+        .breadcrumb-area {
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .breadcrumb {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .breadcrumb a {
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+        .section-label {
+            color: var(--green);
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-size: clamp(34px, 4vw, 48px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .section-text {
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* =====================================================
+           MAIN CONTENT + SIDEBAR
+        ===================================================== */
+        .content-section {
+            background: white;
+        }
+
+        .content-section p {
+            font-size: 15px;
+            line-height: 1.95;
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-top: 38px;
+            margin-bottom: 15px;
+        }
+
+        .content-section h4 {
+            font-size: 18px;
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content-list {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 27px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .content-list li::before {
+            content: "\F26A";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--green);
+            font-family: "bootstrap-icons";
+        }
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            margin-bottom: 20px;
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: white;
+        }
+
+        .sidebar-card h4 {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 12px;
+            border-radius: 7px;
+            color: #586861;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .sidebar-nav a:hover {
+            background: var(--green-light);
+            color: var(--green);
+        }
+
+        .sidebar-nav a i {
+            font-size: 12px;
+        }
+
+        .download-box {
+            background: var(--dark);
+            border-color: var(--dark);
+        }
+
+        .download-box h4 {
+            color: white;
+        }
+
+        .download-box p {
+            color: #aebfb8;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           TRACKS
+        ===================================================== */
+        .tracks-section {
+            background: var(--cream);
+        }
+
+        .track-card {
+            height: 100%;
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+            transition: .25s ease;
+        }
+
+        .track-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 15px 35px rgba(16,35,28,.07);
+        }
+
+        .track-number {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .track-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .track-card p {
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .track-card ul {
+            margin: 0;
+            padding-left: 17px;
+        }
+
+        .track-card li {
+            color: #63726c;
+            font-size: 12px;
+            margin-bottom: 7px;
+        }
+
+        /* =====================================================
+           IMPORTANT DATES
+        ===================================================== */
+        .dates-section {
+            background: white;
+        }
+
+        .date-row {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            align-items: center;
+            padding: 21px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .date-row:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .date-name {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .date-value {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .date-value.pending {
+            color: var(--green);
+        }
+
+        /* =====================================================
+           ABSTRACT SUBMISSION
+        ===================================================== */
+        .submission-section {
+            background: var(--cream);
+        }
+
+        .submission-box {
+            padding: 45px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+        }
+
+        .submission-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-radius: 13px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 24px;
+        }
+
+        .submission-box h3 {
+            font-size: 27px;
+            margin-bottom: 13px;
+        }
+
+        .submission-box p {
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        /* =====================================================
+           SPEAKERS
+        ===================================================== */
+        .speakers-section {
+            background: white;
+        }
+
+        .speaker-placeholder {
+            padding: 45px 25px;
+            border: 1px dashed #c3d8cf;
+            border-radius: 16px;
+            background: #fbfdfc;
+            text-align: center;
+        }
+
+        .speaker-placeholder-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 25px;
+        }
+
+        .speaker-placeholder h3 {
+            font-size: 21px;
+        }
+
+        .speaker-placeholder p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* =====================================================
+           COMMITTEE
+        ===================================================== */
+        .committee-section {
+            background: var(--cream);
+        }
+
+        .committee-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: white;
+        }
+
+        .committee-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 11px;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 21px;
+        }
+
+        .committee-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .committee-card p {
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* =====================================================
+           REGISTRATION
+        ===================================================== */
+        .registration-section {
+            background: white;
+        }
+
+        .registration-table {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .registration-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .registration-row:last-child {
+            border-bottom: none;
+        }
+
+        .registration-row.header {
+            background: var(--dark);
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .registration-row:not(.header) {
+            font-size: 14px;
+        }
+
+        .registration-row:not(.header) .price {
+            color: var(--green);
+            font-weight: 800;
+        }
+
+        /* =====================================================
+           VENUE
+        ===================================================== */
+        .venue-section {
+            background: var(--cream);
+        }
+
+        .venue-box {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: white;
+        }
+
+        .venue-placeholder {
+            min-height: 270px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    #eaf5f0,
+                    #f8fbfa
+                );
+        }
+
+        .venue-placeholder-inner {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .venue-placeholder-inner i {
+            color: var(--green);
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .venue-details {
+            padding: 35px;
+        }
+
+        .venue-details h3 {
+            font-size: 25px;
+        }
+
+        .venue-details p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+        .faq-section {
+            background: white;
+        }
+
+        .accordion-item {
+            border: 1px solid var(--border) !important;
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 14px;
+            background: white;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: var(--green);
+            background: var(--green-light);
+        }
+
+        .accordion-body {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+        .cta {
+            padding: 0 0 100px;
+        }
+
+        .cta-box {
+            padding: 65px 55px;
+            border-radius: 22px;
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(255,255,255,.13),
+                    transparent 25%
+                ),
+                linear-gradient(
+                    120deg,
+                    var(--green-dark),
+                    var(--green)
+                );
+        }
+
+        .cta-box h2 {
+            color: white;
+            font-size: clamp(32px,4vw,48px);
+            letter-spacing: -1.5px;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            color: #d8f2e8;
+            line-height: 1.8;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+        footer {
+            padding-top: 70px;
+            background: #0b1814;
+            color: #9dafaa;
+        }
+
+        .footer-brand {
+            color: white;
+            font-family: "Manrope", sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        footer h5 {
+            color: white;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer li {
+            margin-bottom: 11px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9dafaa;
+        }
+
+        footer a:hover {
+            color: #55d5aa;
+        }
+
+        .social {
+            display: flex;
+            gap: 9px;
+            margin-top: 22px;
+        }
+
+        .social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2b4038;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .social a:hover {
+            background: var(--green);
+            border-color: var(--green);
+        }
+
+        .copyright {
+            border-top: 1px solid #21352e;
+            margin-top: 50px;
+            padding: 25px 0;
+            font-size: 13px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+        @media (max-width: 991px) {
+            .conference-hero {
+                padding-top: 135px;
+            }
+
+            .info-box {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-item:nth-child(2) {
+                border-right: none;
+            }
+
+            .info-item:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .conference-hero {
+                padding-top: 120px;
+                padding-bottom: 65px;
+            }
+
+            .conference-hero h1 {
+                font-size: 43px;
+                letter-spacing: -2px;
+            }
+
+            .conference-intro {
+                font-size: 16px;
+            }
+
+            .info-box {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none !important;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .submission-box {
+                padding: 30px 25px;
+            }
+
+            .date-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .registration-row {
+                grid-template-columns: 1fr;
+                gap: 6px;
+            }
+
+            .registration-row.header {
+                display: none;
+            }
+
+            .cta-box {
+                padding: 45px 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a
+            class="navbar-brand"
+            href="index.html"
+        >
+            <span class="brand-icon">
+                <i class="bi bi-diagram-3"></i>
+            </span>
+            <span class="brand-green">
+                TREES
+            </span>
+            &nbsp;Conferences
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navigation"
+        >
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="about.html"
+                    >
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link active"
+                        href="conferences.html"
+                    >
+                        Conferences
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#focus"
+                    >
+                        Scientific Areas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        href="index.html#involved"
+                    >
+                        Get Involved
+                    </a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <a
+                        href="#registration"
+                        class="btn btn-primary"
+                    >
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- =====================================================
+     CONFERENCE HERO
+====================================================== -->
+<section class="conference-hero">
+    <div class="container hero-content">
+        <div class="conference-status">
+            <span></span>
+            Registration Opening Soon
+        </div>
+        <div class="conference-code">
+            TREES 2027 · MED-01
+        </div>
+        <h1>
+            International Conference on
+            Medical & Health Sciences
+        </h1>
+        <p class="conference-intro">
+            A multidisciplinary international forum
+            bringing together researchers, healthcare
+            professionals, clinicians, academics and
+            innovators to exchange knowledge across
+            contemporary medical and health sciences.
+        </p>
+        <div class="hero-actions">
+            <a
+                href="#abstract"
+                class="btn btn-light"
+            >
+                Submit an Abstract
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            <a
+                href="#registration"
+                class="btn btn-outline-light"
+            >
+                Registration
+            </a>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     CONFERENCE INFORMATION
+====================================================== -->
+<div class="info-bar">
+    <div class="container">
+        <div class="info-box">
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="bi bi-calendar-event"></i>
+                </div>
+                <div class="info-label">
+                    Conference Date
+                </div>
+                <div class="info-value">
+                    To Be Announced
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="bi bi-geo-alt"></i>
+                </div>
+                <div class="info-label">
+                    Location
+                </div>
+                <div class="info-value">
+                    To Be Announced
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="bi bi-laptop"></i>
+                </div>
+                <div class="info-label">
+                    Format
+                </div>
+                <div class="info-value">
+                    To Be Announced
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <div class="info-label">
+                    Enquiries
+                </div>
+                <div class="info-value">
+                    <a
+                        href="mailto:info@treesconferences.com"
+                        style="color:var(--green);"
+                    >
+                        Contact TREES
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- =====================================================
+     BREADCRUMB
+====================================================== -->
+<div class="breadcrumb-area">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="conferences.html">
+                        Conferences
+                    </a>
+                </li>
+                <li
+                    class="breadcrumb-item active"
+                    aria-current="page"
+                >
+                    Medical & Health Sciences
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- =====================================================
+     ABOUT CONFERENCE
+====================================================== -->
+<section
+    class="section-padding content-section"
+    id="about"
+>
+    <div class="container">
+        <div class="row g-5">
+            <!-- MAIN CONTENT -->
+            <div class="col-lg-8">
+                <div class="section-label">
+                    About the Conference
+                </div>
+                <h2 class="section-title">
+                    Advancing conversations
+                    across medical science.
+                </h2>
+                <p>
+                    The International Conference on Medical
+                    & Health Sciences is envisioned as a
+                    multidisciplinary platform for sharing
+                    research, clinical perspectives,
+                    emerging technologies and scientific
+                    developments across healthcare.
+                </p>
+                <p>
+                    The conference will bring together
+                    researchers, clinicians, healthcare
+                    professionals, academics, students and
+                    other professionals interested in
+                    advancing knowledge and improving
+                    understanding across medical and
+                    health-related disciplines.
+                </p>
+                <p>
+                    The programme will be developed around
+                    scientific presentations, invited
+                    contributions, discussions and
+                    opportunities for professional
+                    interaction.
+                </p>
+                <h3>
+                    Who Should Attend?
+                </h3>
+                <ul class="content-list">
+                    <li>
+                        Medical researchers and scientists
+                    </li>
+                    <li>
+                        Physicians and healthcare professionals
+                    </li>
+                    <li>
+                        Surgeons and clinical specialists
+                    </li>
+                    <li>
+                        Academics and university faculty
+                    </li>
+                    <li>
+                        Postgraduate and doctoral researchers
+                    </li>
+                    <li>
+                        Healthcare technology professionals
+                    </li>
+                    <li>
+                        Pharmaceutical and biotechnology researchers
+                    </li>
+                    <li>
+                        Students and early-career researchers
+                    </li>
+                </ul>
+                <h3>
+                    Conference Objectives
+                </h3>
+                <ul class="content-list">
+                    <li>
+                        Facilitate exchange of current
+                        scientific and clinical knowledge.
+                    </li>
+                    <li>
+                        Encourage interdisciplinary
+                        collaboration.
+                    </li>
+                    <li>
+                        Provide a platform for researchers
+                        to present their work.
+                    </li>
+                    <li>
+                        Explore emerging developments
+                        in medical and health sciences.
+                    </li>
+                    <li>
+                        Encourage meaningful scientific
+                        discussion and collaboration.
+                    </li>
+                </ul>
+            </div>
+            <!-- SIDEBAR -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h4>
+                            Conference Navigation
+                        </h4>
+                        <div class="sidebar-nav">
+                            <a href="#about">
+                                About the Conference
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#tracks">
+                                Scientific Tracks
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#dates">
+                                Important Dates
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#abstract">
+                                Abstract Submission
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#speakers">
+                                Speakers
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#committee">
+                                Committee
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#registration">
+                                Registration
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#venue">
+                                Venue
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="#faq">
+                                FAQs
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar-card download-box">
+                        <h4>
+                            Conference Information
+                        </h4>
+                        <p>
+                            Conference brochure and
+                            programme information will
+                            be available when finalized.
+                        </p>
+                        <button
+                            class="btn btn-outline-light w-100"
+                            disabled
+                        >
+                            <i class="bi bi-file-earmark-pdf me-1"></i>
+                            Brochure Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     SCIENTIFIC TRACKS
+====================================================== -->
+<section
+    class="section-padding tracks-section"
+    id="tracks"
+>
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                Scientific Programme
+            </div>
+            <h2 class="section-title">
+                Areas of discussion
+            </h2>
+            <p
+                class="section-text mx-auto"
+                style="max-width:700px;"
+            >
+                The final scientific programme will be
+                developed as the conference approaches.
+                The following areas represent the intended
+                scope of the event.
+            </p>
+        </div>
+        <div class="row g-4">
+            <!-- TRACK 01 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 01
+                    </div>
+                    <h3>
+                        Surgery
+                    </h3>
+                    <p>
+                        Research and developments across
+                        surgical science and clinical practice.
+                    </p>
+                    <ul>
+                        <li>
+                            General Surgery
+                        </li>
+                        <li>
+                            Surgical Innovation
+                        </li>
+                        <li>
+                            Minimally Invasive Surgery
+                        </li>
+                        <li>
+                            Surgical Technology
+                        </li>
+                        <li>
+                            Perioperative Care
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- TRACK 02 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 02
+                    </div>
+                    <h3>
+                        Oncology
+                    </h3>
+                    <p>
+                        Contemporary research across cancer
+                        science, diagnosis and treatment.
+                    </p>
+                    <ul>
+                        <li>
+                            Cancer Biology
+                        </li>
+                        <li>
+                            Cancer Diagnosis
+                        </li>
+                        <li>
+                            Therapeutics
+                        </li>
+                        <li>
+                            Precision Oncology
+                        </li>
+                        <li>
+                            Clinical Research
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- TRACK 03 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 03
+                    </div>
+                    <h3>
+                        Cardiovascular Sciences
+                    </h3>
+                    <p>
+                        Research spanning cardiovascular
+                        medicine, interventions and prevention.
+                    </p>
+                    <ul>
+                        <li>
+                            Cardiology
+                        </li>
+                        <li>
+                            Cardiovascular Surgery
+                        </li>
+                        <li>
+                            Interventional Cardiology
+                        </li>
+                        <li>
+                            Cardiovascular Imaging
+                        </li>
+                        <li>
+                            Prevention & Rehabilitation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- TRACK 04 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 04
+                    </div>
+                    <h3>
+                        Public Health
+                    </h3>
+                    <p>
+                        Evidence-based approaches to health
+                        systems, prevention and population health.
+                    </p>
+                    <ul>
+                        <li>
+                            Epidemiology
+                        </li>
+                        <li>
+                            Health Policy
+                        </li>
+                        <li>
+                            Global Health
+                        </li>
+                        <li>
+                            Disease Prevention
+                        </li>
+                        <li>
+                            Health Systems
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- TRACK 05 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 05
+                    </div>
+                    <h3>
+                        Digital Health
+                    </h3>
+                    <p>
+                        Technology-enabled approaches to
+                        healthcare delivery and research.
+                    </p>
+                    <ul>
+                        <li>
+                            Artificial Intelligence
+                        </li>
+                        <li>
+                            Medical Imaging
+                        </li>
+                        <li>
+                            Telemedicine
+                        </li>
+                        <li>
+                            Health Informatics
+                        </li>
+                        <li>
+                            Digital Therapeutics
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- TRACK 06 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="track-card">
+                    <div class="track-number">
+                        TRACK 06
+                    </div>
+                    <h3>
+                        Emerging Medical Sciences
+                    </h3>
+                    <p>
+                        New directions and interdisciplinary
+                        developments across healthcare.
+                    </p>
+                    <ul>
+                        <li>
+                            Biotechnology
+                        </li>
+                        <li>
+                            Regenerative Medicine
+                        </li>
+                        <li>
+                            Translational Research
+                        </li>
+                        <li>
+                            Medical Devices
+                        </li>
+                        <li>
+                            Emerging Therapies
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     IMPORTANT DATES
+====================================================== -->
+<section
+    class="section-padding dates-section"
+    id="dates"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <div class="section-label">
+                        Key Dates
+                    </div>
+                    <h2 class="section-title">
+                        Important dates
+                    </h2>
+                    <p class="section-text">
+                        Dates will be announced as the
+                        conference programme is finalized.
+                    </p>
+                </div>
+                <div class="date-row">
+                    <div class="date-name">
+                        Abstract Submission Opens
+                    </div>
+                    <div class="date-value pending">
+                        To Be Announced
+                    </div>
+                </div>
+                <div class="date-row">
+                    <div class="date-name">
+                        Abstract Submission Deadline
+                    </div>
+                    <div class="date-value pending">
+                        To Be Announced
+                    </div>
+                </div>
+                <div class="date-row">
+                    <div class="date-name">
+                        Acceptance Notification
+                    </div>
+                    <div class="date-value pending">
+                        To Be Announced
+                    </div>
+                </div>
+                <div class="date-row">
+                    <div class="date-name">
+                        Early Registration Deadline
+                    </div>
+                    <div class="date-value pending">
+                        To Be Announced
+                    </div>
+                </div>
+                <div class="date-row">
+                    <div class="date-name">
+                        Conference Dates
+                    </div>
+                    <div class="date-value pending">
+                        To Be Announced
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     ABSTRACT SUBMISSION
+====================================================== -->
+<section
+    class="section-padding submission-section"
+    id="abstract"
+>
+    <div class="container">
+        <div class="submission-box">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="submission-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+                    <div class="section-label">
+                        Call for Abstracts
+                    </div>
+                    <h3>
+                        Share your research with the
+                        TREES scientific community.
+                    </h3>
+                    <p>
+                        Researchers, academics, clinicians
+                        and professionals will be invited
+                        to submit original research,
+                        reviews, case studies and other
+                        relevant scientific contributions.
+                    </p>
+                    <p class="mb-0">
+                        Submission guidelines, abstract
+                        format and deadline will be
+                        published when the call for
+                        abstracts opens.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <button
+                        class="btn btn-primary"
+                        disabled
+                    >
+                        Submissions Opening Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     SPEAKERS
+====================================================== -->
+<section
+    class="section-padding speakers-section"
+    id="speakers"
+>
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                Speakers
+            </div>
+            <h2 class="section-title">
+                Meet the scientific community.
+            </h2>
+            <p
+                class="section-text mx-auto"
+                style="max-width:700px;"
+            >
+                Invited speakers and keynote contributors
+                will be announced as they are confirmed.
+            </p>
+        </div>
+        <div class="speaker-placeholder">
+            <div class="speaker-placeholder-icon">
+                <i class="bi bi-mic"></i>
+            </div>
+            <h3>
+                Speakers will be announced soon.
+            </h3>
+            <p class="mt-2">
+                TREES is currently developing the
+                scientific programme for this conference.
+                Speaker information will be added here
+                once invitations are confirmed.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     COMMITTEE
+====================================================== -->
+<section
+    class="section-padding committee-section"
+    id="committee"
+>
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                Organization
+            </div>
+            <h2 class="section-title">
+                Conference committee
+            </h2>
+            <p
+                class="section-text mx-auto"
+                style="max-width:700px;"
+            >
+                Committee members and scientific
+                leadership will be listed here as
+                appointments are confirmed.
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="committee-card">
+                    <div class="committee-icon">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                    <h3>
+                        Conference Chair
+                    </h3>
+                    <p>
+                        To be announced.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="committee-card">
+                    <div class="committee-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h3>
+                        Scientific Committee
+                    </h3>
+                    <p>
+                        Members will be announced as
+                        the scientific committee is formed.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="committee-card">
+                    <div class="committee-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3>
+                        Organizing Committee
+                    </h3>
+                    <p>
+                        Organizing team information will
+                        be published when finalized.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     REGISTRATION
+====================================================== -->
+<section
+    class="section-padding registration-section"
+    id="registration"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="text-center mb-5">
+                    <div class="section-label">
+                        Registration
+                    </div>
+                    <h2 class="section-title">
+                        Participate in the conference.
+                    </h2>
+                    <p class="section-text">
+                        Registration categories and fees
+                        will be published when registration
+                        opens.
+                    </p>
+                </div>
+                <div class="registration-table">
+                    <div class="registration-row header">
+                        <div>
+                            Registration Category
+                        </div>
+                        <div>
+                            Fee
+                        </div>
+                    </div>
+                    <div class="registration-row">
+                        <div>
+                            Academic / Researcher
+                        </div>
+                        <div class="price">
+                            To Be Announced
+                        </div>
+                    </div>
+                    <div class="registration-row">
+                        <div>
+                            Student / Early Career
+                        </div>
+                        <div class="price">
+                            To Be Announced
+                        </div>
+                    </div>
+                    <div class="registration-row">
+                        <div>
+                            Industry Professional
+                        </div>
+                        <div class="price">
+                            To Be Announced
+                        </div>
+                    </div>
+                    <div class="registration-row">
+                        <div>
+                            Accompanying Participant
+                        </div>
+                        <div class="price">
+                            To Be Announced
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button
+                        class="btn btn-primary"
+                        disabled
+                    >
+                        Registration Opening Soon
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     VENUE
+====================================================== -->
+<section
+    class="section-padding venue-section"
+    id="venue"
+>
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-label">
+                Venue & Location
+            </div>
+            <h2 class="section-title">
+                Conference venue
+            </h2>
+        </div>
+        <div class="venue-box">
+            <div class="venue-placeholder">
+                <div class="venue-placeholder-inner">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>
+                        Venue To Be Announced
+                    </h3>
+                    <p class="mb-0">
+                        Location and venue information
+                        will be published once confirmed.
+                    </p>
+                </div>
+            </div>
+            <div class="venue-details">
+                <h3>
+                    Location information
+                </h3>
+                <p>
+                    Details regarding the conference
+                    venue, accommodation, transportation
+                    and local information will be provided
+                    after the location is finalized.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     FAQ
+====================================================== -->
+<section
+    class="section-padding faq-section"
+    id="faq"
+>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="text-center mb-5">
+                    <div class="section-label">
+                        Frequently Asked Questions
+                    </div>
+                    <h2 class="section-title">
+                        Questions about the conference?
+                    </h2>
+                </div>
+                <div
+                    class="accordion"
+                    id="conferenceFAQ"
+                >
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqOne"
+                            >
+                                Who can participate?
+                            </button>
+                        </h2>
+                        <div
+                            id="faqOne"
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#conferenceFAQ"
+                        >
+                            <div class="accordion-body">
+                                Researchers, academics,
+                                clinicians, healthcare
+                                professionals, students,
+                                industry professionals and
+                                others working in relevant
+                                areas will be welcome to
+                                participate.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqTwo"
+                            >
+                                Can I submit research?
+                            </button>
+                        </h2>
+                        <div
+                            id="faqTwo"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#conferenceFAQ"
+                        >
+                            <div class="accordion-body">
+                                Yes. A call for abstracts
+                                will be published with
+                                submission guidelines,
+                                formatting requirements
+                                and deadlines.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqThree"
+                            >
+                                When will registration open?
+                            </button>
+                        </h2>
+                        <div
+                            id="faqThree"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#conferenceFAQ"
+                        >
+                            <div class="accordion-body">
+                                Registration dates will be
+                                announced once the conference
+                                dates and programme have
+                                been finalized.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqFour"
+                            >
+                                Will there be online participation?
+                            </button>
+                        </h2>
+                        <div
+                            id="faqFour"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#conferenceFAQ"
+                        >
+                            <div class="accordion-body">
+                                The participation format
+                                will be announced once the
+                                conference structure is
+                                finalized.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#faqFive"
+                            >
+                                How can I contact the organizers?
+                            </button>
+                        </h2>
+                        <div
+                            id="faqFive"
+                            class="accordion-collapse collapse"
+                            data-bs-parent="#conferenceFAQ"
+                        >
+                            <div class="accordion-body">
+                                You can contact the TREES
+                                conference team at
+                                info@treesconferences.com.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2>
+                        Be part of the conversation.
+                    </h2>
+                    <p class="mt-3 mb-0">
+                        Stay informed about abstract
+                        submissions, registration,
+                        speakers and programme
+                        announcements.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                    <a
+                        href="mailto:info@treesconferences.com"
+                        class="btn btn-light btn-lg"
+                    >
+                        Contact TREES
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="footer-brand">
+                    TREES.
+                </div>
+                <p class="mt-3">
+                    Technology, Research, Engineering,
+                    & Empirical Sciences.
+                </p>
+                <p>
+                    An international conference initiative
+                    connecting people, ideas and knowledge
+                    across technology, engineering, medicine,
+                    life sciences and beyond.
+                </p>
+                <div class="social">
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="X">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Explore
+                </h5>
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conferences.html">
+                            Conferences
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#focus">
+                            Scientific Areas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Conference
+                </h5>
+                <ul>
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tracks">
+                            Scientific Tracks
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#dates">
+                            Important Dates
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#abstract">
+                            Abstracts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#registration">
+                            Registration
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5>
+                    Contact
+                </h5>
+                <ul>
+                    <li>
+                        <i class="bi bi-envelope me-2"></i>
+                        <a
+                            href="mailto:info@treesconferences.com"
+                        >
+                            info@treesconferences.com
+                        </a>
+                    </li>
+                    <li>
+                        <i class="bi bi-globe me-2"></i>
+                        treesconferences.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6">
+                    © 2026 TREES Conferences.
+                    All rights reserved.
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                    <a
+                        href="#"
+                        class="me-3"
+                    >
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+<script>
+    /*
+     * Navbar shadow
+     */
+    window.addEventListener(
+        "scroll",
+        function () {
+            const navbar =
+                document.querySelector(".navbar");
+            if (window.scrollY > 20) {
+                navbar.style.boxShadow =
+                    "0 8px 30px rgba(16,35,28,.08)";
+            } else {
+                navbar.style.boxShadow =
+                    "none";
+            }
+        }
+    );
+    /*
+     * Close mobile navigation
+     */
+    document
+        .querySelectorAll(".navbar .nav-link")
+        .forEach(function(link) {
+            link.addEventListener(
+                "click",
+                function() {
+                    const navigation =
+                        document.querySelector(
+                            "#navigation"
+                        );
+                    if (
+                        navigation.classList.contains(
+                            "show"
+                        )
+                    ) {
+                        const collapse =
+                            bootstrap.Collapse
+                                .getInstance(
+                                    navigation
+                                );
+                        if (collapse) {
+                            collapse.hide();
+                        }
+                    }
+                }
+            );
+        });
+</script>
+</body>
+</html>
