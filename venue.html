@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue | TREES International Conference</title>
+    <meta name="description"
+          content="Venue and travel information for the TREES International Conference.">
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <!-- =====================================================
+         SITE CSS
+    ====================================================== -->
+    <style>
+        :root {
+            --trees-primary: #0f766e;
+            --trees-primary-dark: #115e59;
+            --trees-secondary: #14b8a6;
+            --trees-accent: #f59e0b;
+            --trees-dark: #12312f;
+            --trees-text: #475569;
+            --trees-light: #f0fdfa;
+            --trees-border: #dbe7e5;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            color: var(--trees-text);
+            background: #ffffff;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+        }
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #edf2f2;
+            padding: 16px 0;
+        }
+        .navbar-brand {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--trees-primary) !important;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span {
+            color: var(--trees-dark);
+        }
+        .navbar-nav .nav-link {
+            color: #334155;
+            font-weight: 500;
+            margin-left: 12px;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--trees-primary);
+        }
+        .btn-register {
+            background: var(--trees-primary);
+            color: #fff !important;
+            padding: 10px 20px !important;
+            border-radius: 8px;
+            margin-left: 18px;
+        }
+        .btn-register:hover {
+            background: var(--trees-primary-dark);
+        }
+        /* =====================================================
+           PAGE HERO
+        ====================================================== */
+        .page-hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(15, 118, 110, 0.97),
+                    rgba(17, 94, 89, 0.94)
+                );
+            color: #ffffff;
+            padding: 90px 0 85px;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            right: -150px;
+            top: -180px;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .breadcrumb {
+            margin-bottom: 22px;
+        }
+        .breadcrumb-item,
+        .breadcrumb-item a {
+            color: rgba(255,255,255,0.75);
+        }
+        .breadcrumb-item.active {
+            color: #ffffff;
+        }
+        .page-hero h1 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+        }
+        .page-hero p {
+            max-width: 760px;
+            font-size: 1.08rem;
+            color: rgba(255,255,255,0.88);
+            margin-bottom: 0;
+        }
+        /* =====================================================
+           GENERAL SECTIONS
+        ====================================================== */
+        .section {
+            padding: 80px 0;
+        }
+        .section-light {
+            background: #f8fbfb;
+        }
+        .section-title {
+            margin-bottom: 45px;
+        }
+        .section-title .eyebrow {
+            display: inline-block;
+            color: var(--trees-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .section-title h2 {
+            color: var(--trees-dark);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+        }
+        .section-title p {
+            max-width: 720px;
+            margin: auto;
+            color: #64748b;
+        }
+        /* =====================================================
+           VENUE INTRO
+        ====================================================== */
+        .venue-image {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 18px;
+            background: #dcebea;
+        }
+        .venue-image-placeholder {
+            width: 100%;
+            height: 430px;
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff7f4,
+                    #c7ece7
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--trees-primary);
+            font-size: 4rem;
+        }
+        .venue-content {
+            padding-left: 25px;
+        }
+        .venue-content h2 {
+            color: var(--trees-dark);
+            font-weight: 800;
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+        }
+        .venue-content p {
+            color: #64748b;
+        }
+        .venue-meta {
+            margin-top: 28px;
+        }
+        .venue-meta-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .venue-meta-icon {
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: var(--trees-light);
+            color: var(--trees-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .venue-meta-item strong {
+            display: block;
+            color: var(--trees-dark);
+            font-size: 0.95rem;
+        }
+        .venue-meta-item span {
+            color: #64748b;
+            font-size: 0.92rem;
+        }
+        /* =====================================================
+           INFO CARDS
+        ====================================================== */
+        .info-card {
+            height: 100%;
+            background: #ffffff;
+            border: 1px solid var(--trees-border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.25s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(15, 118, 110, 0.09);
+        }
+        .info-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--trees-light);
+            color: var(--trees-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .info-card h3 {
+            color: var(--trees-dark);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .info-card p {
+            margin-bottom: 0;
+            color: #64748b;
+            font-size: 0.94rem;
+        }
+        /* =====================================================
+           MAP
+        ====================================================== */
+        .map-wrapper {
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid var(--trees-border);
+            min-height: 430px;
+            background: #eef5f4;
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 430px;
+            border: 0;
+        }
+        .map-placeholder {
+            min-height: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #64748b;
+            padding: 30px;
+        }
+        .map-placeholder i {
+            font-size: 3rem;
+            color: var(--trees-primary);
+            margin-bottom: 15px;
+        }
+        /* =====================================================
+           ACCOMMODATION
+        ====================================================== */
+        .hotel-card {
+            background: #ffffff;
+            border: 1px solid var(--trees-border);
+            border-radius: 16px;
+            padding: 26px;
+            height: 100%;
+        }
+        .hotel-card h3 {
+            color: var(--trees-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .hotel-distance {
+            display: inline-block;
+            background: var(--trees-light);
+            color: var(--trees-primary);
+            border-radius: 30px;
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .hotel-card p {
+            color: #64748b;
+            font-size: 0.92rem;
+        }
+        .hotel-link {
+            color: var(--trees-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .hotel-link:hover {
+            color: var(--trees-primary-dark);
+        }
+        /* =====================================================
+           TRAVEL
+        ====================================================== */
+        .travel-item {
+            display: flex;
+            gap: 18px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--trees-border);
+        }
+        .travel-item:last-child {
+            border-bottom: 0;
+        }
+        .travel-icon {
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--trees-light);
+            color: var(--trees-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+        .travel-item h3 {
+            color: var(--trees-dark);
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .travel-item p {
+            color: #64748b;
+            margin: 0;
+            font-size: 0.92rem;
+        }
+        /* =====================================================
+           CTA
+        ====================================================== */
+        .cta-section {
+            padding: 75px 0;
+            background: var(--trees-dark);
+            color: #ffffff;
+        }
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .cta-section p {
+            color: rgba(255,255,255,0.72);
+            max-width: 680px;
+            margin: 0 auto 28px;
+        }
+        .btn-primary-trees {
+            background: var(--trees-secondary);
+            border: none;
+            color: #ffffff;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+        .btn-primary-trees:hover {
+            background: #0d9488;
+            color: #ffffff;
+        }
+        .btn-outline-trees {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .btn-outline-trees:hover {
+            background: #ffffff;
+            color: var(--trees-dark);
+        }
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+        footer {
+            background: #0b2422;
+            color: rgba(255,255,255,0.7);
+            padding: 55px 0 25px;
+        }
+        .footer-brand {
+            color: #ffffff;
+            font-size: 1.45rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        footer p {
+            font-size: 0.9rem;
+        }
+        footer h5 {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer li {
+            margin-bottom: 8px;
+        }
+        footer a {
+            color: rgba(255,255,255,0.68);
+            font-size: 0.88rem;
+        }
+        footer a:hover {
+            color: #ffffff;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: 0.82rem;
+        }
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                padding-top: 15px;
+            }
+            .btn-register {
+                display: inline-block;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            .venue-content {
+                padding-left: 0;
+                padding-top: 35px;
+            }
+            .venue-image,
+            .venue-image-placeholder {
+                height: 350px;
+            }
+        }
+        @media (max-width: 767px) {
+            .page-hero {
+                padding: 65px 0;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .venue-image,
+            .venue-image-placeholder {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            TREES<span>.</span>
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar"
+        >
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="conferences.html">
+                        Conferences
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="submit-abstract.html">
+                        Submit Abstract
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link btn-register"
+                        href="registration.html"
+                    >
+                        Register
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =====================================================
+     PAGE HERO
+====================================================== -->
+<section class="page-hero">
+    <div class="container page-hero-content">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="conference.html">
+                        Conference
+                    </a>
+                </li>
+                <li
+                    class="breadcrumb-item active"
+                    aria-current="page"
+                >
+                    Venue
+                </li>
+            </ol>
+        </nav>
+        <h1>
+            Conference Venue
+        </h1>
+        <p id="heroDescription">
+            Discover the venue, accommodation, transportation
+            and travel information for the conference.
+        </p>
+    </div>
+</section>
+
+<!-- =====================================================
+     VENUE OVERVIEW
+====================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <!-- IMAGE -->
+            <div class="col-lg-6">
+                <!--
+                    Replace this placeholder with:
+                    <img
+                        src="assets/images/venue/venue.jpg"
+                        class="venue-image"
+                        alt="Conference venue"
+                    >
+                -->
+                <div
+                    class="venue-image-placeholder"
+                    id="venueImage"
+                >
+                    <i class="bi bi-building"></i>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="col-lg-6">
+                <div class="venue-content">
+                    <span class="section-title">
+                        <span class="eyebrow">
+                            Where We Meet
+                        </span>
+                    </span>
+                    <h2 id="venueName">
+                        Conference Venue
+                    </h2>
+                    <p id="venueDescription">
+                        The conference venue will provide a
+                        professional and welcoming environment
+                        for researchers, academics, healthcare
+                        professionals, engineers, industry
+                        representatives and other participants
+                        to connect and exchange ideas.
+                    </p>
+                    <p>
+                        Further venue details, room information
+                        and local arrangements will be updated
+                        as the conference approaches.
+                    </p>
+
+                    <!-- VENUE DETAILS -->
+                    <div class="venue-meta">
+                        <div class="venue-meta-item">
+                            <div class="venue-meta-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Address
+                                </strong>
+                                <span id="venueAddress">
+                                    Venue address will be announced
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="venue-meta-item">
+                            <div class="venue-meta-icon">
+                                <i class="bi bi-globe2"></i>
+                            </div>
+                            <div>
+                                <strong>
+                                    City & Country
+                                </strong>
+                                <span id="venueLocation">
+                                    City, Country
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="venue-meta-item">
+                            <div class="venue-meta-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <strong>
+                                    Venue Contact
+                                </strong>
+                                <span id="venuePhone">
+                                    Details will be announced
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     VENUE FEATURES
+====================================================== -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="eyebrow">
+                At The Venue
+            </span>
+            <h2>
+                Conference Facilities
+            </h2>
+            <p>
+                Designed to support productive scientific
+                exchange, networking and professional
+                interaction.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-mic"></i>
+                    </div>
+                    <h3>
+                        Conference Auditorium
+                    </h3>
+                    <p>
+                        A dedicated auditorium for keynote
+                        presentations, plenary sessions and
+                        major conference activities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h3>
+                        Networking Areas
+                    </h3>
+                    <p>
+                        Comfortable spaces for participants
+                        to meet colleagues, exchange ideas
+                        and develop professional connections.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-display"></i>
+                    </div>
+                    <h3>
+                        Presentation Facilities
+                    </h3>
+                    <p>
+                        Modern audiovisual facilities for
+                        oral presentations, scientific talks
+                        and invited lectures.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-wifi"></i>
+                    </div>
+                    <h3>
+                        Wi-Fi Connectivity
+                    </h3>
+                    <p>
+                        Internet connectivity will be
+                        available for conference participants
+                        throughout the venue.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-cup-hot"></i>
+                    </div>
+                    <h3>
+                        Refreshments
+                    </h3>
+                    <p>
+                        Coffee breaks and refreshments will
+                        be arranged during the conference
+                        according to the official program.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD -->
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-universal-access"></i>
+                    </div>
+                    <h3>
+                        Accessibility
+                    </h3>
+                    <p>
+                        Venue accessibility information will
+                        be provided to registered participants
+                        before the conference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     MAP & LOCATION
+====================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <span class="eyebrow">
+                Location
+            </span>
+            <h2>
+                Find the Venue
+            </h2>
+            <p>
+                Use the map below to locate the conference
+                venue and plan your journey.
+            </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+            <!-- MAP -->
+            <div class="col-lg-8">
+                <div class="map-wrapper">
+                    <!--
+                    =================================================
+                    GOOGLE MAP
+                    Replace the placeholder below with your
+                    Google Maps iframe when the venue is confirmed.
+                    Example:
+                    <iframe
+                        src="YOUR_GOOGLE_MAP_EMBED_URL"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    =================================================
+                    -->
+                    <div class="map-placeholder">
+                        <i class="bi bi-map"></i>
+                        <h4>
+                            Map Coming Soon
+                        </h4>
+                        <p class="mb-0">
+                            The interactive venue map will be
+                            added once the conference location
+                            is confirmed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOCATION SUMMARY -->
+            <div class="col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-pin-map"></i>
+                    </div>
+                    <h3>
+                        Venue Location
+                    </h3>
+                    <p id="locationSummary">
+                        The conference venue and detailed
+                        location information will be announced
+                        shortly.
+                    </p>
+                    <hr class="my-4">
+                    <h3>
+                        Getting There
+                    </h3>
+                    <p>
+                        Detailed directions from the nearest
+                        airport, railway station and major
+                        transport hubs will be published here
+                        before the conference.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     ACCOMMODATION
+====================================================== -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="eyebrow">
+                Stay
+            </span>
+            <h2>
+                Accommodation
+            </h2>
+            <p>
+                Recommended accommodation options near the
+                conference venue will be listed here.
+            </p>
+        </div>
+
+        <div class="row g-4" id="hotelGrid">
+            <!--
+                Hotel cards can later be generated
+                dynamically from the database.
+            -->
+            <div class="col-md-6 col-lg-4">
+                <div class="hotel-card">
+                    <span class="hotel-distance">
+                        Recommended Hotel
+                    </span>
+                    <h3>
+                        Accommodation Option 1
+                    </h3>
+                    <p>
+                        Hotel details, room categories,
+                        conference rates and booking
+                        information will be announced.
+                    </p>
+                    <a
+                        href="#"
+                        class="hotel-link"
+                    >
+                        Details Coming Soon
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="hotel-card">
+                    <span class="hotel-distance">
+                        Nearby
+                    </span>
+                    <h3>
+                        Accommodation Option 2
+                    </h3>
+                    <p>
+                        Additional accommodation options
+                        may be provided for participants
+                        with different budgets and preferences.
+                    </p>
+                    <a
+                        href="#"
+                        class="hotel-link"
+                    >
+                        Details Coming Soon
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="hotel-card">
+                    <span class="hotel-distance">
+                        Alternative
+                    </span>
+                    <h3>
+                        Accommodation Option 3
+                    </h3>
+                    <p>
+                        Further hotel and accommodation
+                        recommendations will be added
+                        when arrangements are finalized.
+                    </p>
+                    <a
+                        href="#"
+                        class="hotel-link"
+                    >
+                        Details Coming Soon
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     TRAVEL INFORMATION
+====================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="section-title mb-4">
+                    <span class="eyebrow">
+                        Travel Information
+                    </span>
+                    <h2>
+                        Plan Your Journey
+                    </h2>
+                    <p>
+                        International participants will find
+                        useful travel information here as the
+                        conference arrangements are finalized.
+                    </p>
+                </div>
+                <a
+                    href="contact.html"
+                    class="btn btn-primary-trees"
+                >
+                    Contact Conference Team
+                </a>
+            </div>
+
+            <div class="col-lg-7">
+                <!-- AIRPORT -->
+                <div class="travel-item">
+                    <div class="travel-icon">
+                        <i class="bi bi-airplane"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Nearest Airport
+                        </h3>
+                        <p id="airportInfo">
+                            Airport information will be
+                            announced once the venue is
+                            confirmed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- RAILWAY -->
+                <div class="travel-item">
+                    <div class="travel-icon">
+                        <i class="bi bi-train-front"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Railway Station
+                        </h3>
+                        <p id="railwayInfo">
+                            Information about the nearest
+                            railway station will be provided
+                            for participants traveling by rail.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- LOCAL TRANSPORT -->
+                <div class="travel-item">
+                    <div class="travel-icon">
+                        <i class="bi bi-taxi-front"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Local Transportation
+                        </h3>
+                        <p>
+                            Information about taxis, public
+                            transport, conference transfers
+                            and other local transportation
+                            options will be published here.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VISA -->
+                <div class="travel-item">
+                    <div class="travel-icon">
+                        <i class="bi bi-passport"></i>
+                    </div>
+                    <div>
+                        <h3>
+                            Visa & Travel Documents
+                        </h3>
+                        <p>
+                            International participants should
+                            ensure that they have the necessary
+                            passport, visa and travel documents
+                            before traveling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     LOCAL INFORMATION
+====================================================== -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="eyebrow">
+                Explore
+            </span>
+            <h2>
+                About the Destination
+            </h2>
+            <p>
+                Make the most of your conference experience
+                by discovering the host destination.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-camera"></i>
+                    </div>
+                    <h3>
+                        Places to Visit
+                    </h3>
+                    <p>
+                        Information about local attractions,
+                        landmarks and places of interest will
+                        be provided closer to the conference.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-egg-fried"></i>
+                    </div>
+                    <h3>
+                        Dining
+                    </h3>
+                    <p>
+                        Participants will be able to explore
+                        local cuisine, restaurants and dining
+                        options around the conference venue.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="bi bi-cloud-sun"></i>
+                    </div>
+                    <h3>
+                        Weather
+                    </h3>
+                    <p>
+                        Seasonal weather guidance and practical
+                        packing recommendations can be added
+                        closer to the event.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="cta-section">
+    <div class="container text-center">
+        <h2>
+            Join Us at the Conference
+        </h2>
+        <p>
+            Register to participate and be part of an
+            international community bringing together
+            technology, research, engineering and empirical
+            sciences.
+        </p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a
+                href="registration.html"
+                class="btn btn-primary-trees"
+            >
+                Register Now
+                <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            <a
+                href="submit-abstract.html"
+                class="btn btn-outline-trees"
+            >
+                Submit Abstract
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <div class="footer-brand">
+                    TREES
+                </div>
+                <p>
+                    Technology, Research, Engineering,
+                    & Empirical Sciences.
+                </p>
+                <p>
+                    An international conference platform
+                    connecting researchers, professionals,
+                    academics and innovators.
+                </p>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Explore
+                </h5>
+                <ul>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="conferences.html">
+                            Conferences
+                        </a>
+                    </li>
+                    <li>
+                        <a href="speakers.html">
+                            Speakers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="program.html">
+                            Program
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <h5>
+                    Participate
+                </h5>
+                <ul>
+                    <li>
+                        <a href="registration.html">
+                            Registration
+                        </a>
+                    </li>
+                    <li>
+                        <a href="submit-abstract.html">
+                            Submit Abstract
+                        </a>
+                    </li>
+                    <li>
+                        <a href="venue.html">
+                            Venue
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3">
+                <h5>
+                    Contact
+                </h5>
+                <ul>
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@treesconferences.com">
+                            info@treesconferences.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+            ©
+            <span id="footerYear"></span>
+            TREES Conferences. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<!-- =====================================================
+     CONFERENCE / VENUE DATA
+====================================================== -->
+<script>
+/*
+|--------------------------------------------------------------------------
+| TREES VENUE DATA
+|--------------------------------------------------------------------------
+|
+| This object is intentionally separated from the HTML.
+|
+| Later you can replace this object with:
+|
+|     fetch('/api/conference/2027/venue')
+|
+| and populate the page from your database.
+|
+|--------------------------------------------------------------------------
+*/
+const venueData = {
+    conferenceYear: "2027",
+    conferenceName:
+        "TREES International Conference",
+    venueName:
+        "Conference Venue",
+    venueDescription:
+        "The conference venue will provide a professional and welcoming environment for researchers, academics, healthcare professionals, engineers, industry representatives and other participants to connect and exchange ideas.",
+    address:
+        "Venue address will be announced",
+    cityCountry:
+        "City, Country",
+    phone:
+        "Details will be announced",
+    airport:
+        "Airport information will be announced once the venue is confirmed.",
+    railway:
+        "Information about the nearest railway station will be provided for participants traveling by rail.",
+    locationSummary:
+        "The conference venue and detailed location information will be announced shortly.",
+    /*
+    |--------------------------------------------------------------------------
+    | VENUE IMAGE
+    |--------------------------------------------------------------------------
+    |
+    | Leave empty to show the placeholder.
+    |
+    | Example:
+    |
+    | image:
+    | "assets/images/venue/conference-venue.jpg"
+    |
+    */
+    image: ""
+};
+
+/* =========================================================
+   POPULATE VENUE INFORMATION
+========================================================= */
+function loadVenueData() {
+    const venueName =
+        document.getElementById("venueName");
+    const venueDescription =
+        document.getElementById("venueDescription");
+    const venueAddress =
+        document.getElementById("venueAddress");
+    const venueLocation =
+        document.getElementById("venueLocation");
+    const venuePhone =
+        document.getElementById("venuePhone");
+    const airportInfo =
+        document.getElementById("airportInfo");
+    const railwayInfo =
+        document.getElementById("railwayInfo");
+    const locationSummary =
+        document.getElementById("locationSummary");
+    const venueImage =
+        document.getElementById("venueImage");
+
+    if (venueName) {
+        venueName.textContent =
+            venueData.venueName;
+    }
+    if (venueDescription) {
+        venueDescription.textContent =
+            venueData.venueDescription;
+    }
+    if (venueAddress) {
+        venueAddress.textContent =
+            venueData.address;
+    }
+    if (venueLocation) {
+        venueLocation.textContent =
+            venueData.cityCountry;
+    }
+    if (venuePhone) {
+        venuePhone.textContent =
+            venueData.phone;
+    }
+    if (airportInfo) {
+        airportInfo.textContent =
+            venueData.airport;
+    }
+    if (railwayInfo) {
+        railwayInfo.textContent =
+            venueData.railway;
+    }
+    if (locationSummary) {
+        locationSummary.textContent =
+            venueData.locationSummary;
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | VENUE IMAGE
+    |--------------------------------------------------------------------------
+    */
+    if (
+        venueImage &&
+        venueData.image
+    ) {
+        venueImage.innerHTML = `
+            <img
+                src="${escapeHTML(venueData.image)}"
+                alt="${escapeHTML(venueData.venueName)}"
+                class="venue-image"
+                loading="lazy"
+            >
+        `;
+        venueImage.classList.remove(
+            "venue-image-placeholder"
+        );
+    }
+}
+
+/* =========================================================
+   SECURITY HELPER
+========================================================= */
+function escapeHTML(value) {
+    if (
+        value === null ||
+        value === undefined
+    ) {
+        return "";
+    }
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+/* =========================================================
+   FOOTER YEAR
+========================================================= */
+function setFooterYear() {
+    const footerYear =
+        document.getElementById("footerYear");
+    if (footerYear) {
+        footerYear.textContent =
+            new Date().getFullYear();
+    }
+}
+
+/* =========================================================
+   INITIALIZE PAGE
+========================================================= */
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+        loadVenueData();
+        setFooterYear();
+    }
+);
+</script>
+</body>
+</html>
